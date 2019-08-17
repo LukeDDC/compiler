@@ -1,0 +1,116 @@
+grammar RUBY;
+
+program:
+  statement*;
+
+statement: declaration_statement
+  | if_statement
+  | conditional_expression_list
+  | expression_list
+  ;
+
+body:
+  statement
+  | expression
+  | statement terminator
+  ;
+
+declaration_statement: type ':' ID ASSIGN expression_list terminator;
+
+if_statement: IF conditional_expression_list body* END
+  | IF conditional_expression_list statement* ELSE NEW_LINE body* END;
+
+type: INT_T
+  | FLOAT_T
+  | STRING_T
+  ;
+
+expression_list:
+  expression terminator
+  | expression_list expression terminator;
+
+expression: expression '*' expression
+  | expression ('+' | '-') expression
+  | ID
+  | INT
+  | FLOAT
+  | STRING
+  ;
+
+conditional_expression_list: conditional_expression_list (AND | OR) conditional_expression terminator
+  | conditional_expression terminator
+  ;
+conditional_expression: expression conditional_operator expression;
+
+terminator:
+  | NEW_LINE
+  | SEMICOLON
+  | terminator SEMICOLON
+  | terminator NEW_LINE
+  ;
+
+conditional_operator: EQUALS
+    | NOT_EQUALS
+    | GREATER_THAN
+    | LESSER_THAN
+    | GREATER_THAN_OR_EQUALS
+    | LESSER_THAN_OR_EQUALS
+    ;
+
+// OPERATORS
+GREATER_THAN_OR_EQUALS: '>=';
+LESSER_THAN_OR_EQUALS:  '<=';
+GREATER_THAN:           '>';
+LESSER_THAN:            '<';
+NOT_EQUALS:             '!=';
+ASSIGN:                 '=';
+EQUALS:                 '==';
+AND:                    '&&';
+OR:                     '||';
+// MATH OPERATORS
+ADD:                    '+';
+SUB:                    '-';
+MULT:                   '*';
+DIV:                    '/';
+
+// Separator
+LPAREN:             '(';
+RPAREN:             ')';
+LBRACE:             '{';
+RBRACE:             '}';
+LBRACK:             '[';
+RBRACK:             ']';
+SEMICOLON:          ';';
+COMMA:              ',';
+NEW_LINE:           '\r'? '\n';
+
+// KEYWORDS
+IF: 'if';
+ELSE: 'else';
+WHILE: 'while';
+DO: 'do';
+END: 'end';
+
+// KEYWORDS TYPES
+INT_T:    'Integer';
+FLOAT_T:  'Float';
+STRING_T: 'String';
+
+ID: LETTER+
+  ;
+INT: DIGIT+
+  ;
+FLOAT: DIGIT+ '.' DIGIT+
+  ;
+STRING: '"' .*? '"';
+
+fragment LETTER:
+  [a-zA-Z]
+  | '_'
+  ;
+
+fragment DIGIT:
+  [0-9]
+  ;
+
+WS : (' '|'\t')+ -> skip;
