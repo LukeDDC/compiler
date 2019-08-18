@@ -9,6 +9,7 @@ function_declarion
 
 function_body
   : (function_call | statement)+
+  |
   ;
 
 function_call
