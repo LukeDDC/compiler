@@ -6,6 +6,7 @@ program:
 statement: declaration_statement
   | if_statement
   | while_statement
+  | do_while_statement
   ;
 
 declaration_statement: type ':' ID ASSIGN expression terminator;
@@ -14,7 +15,10 @@ if_statement:
   | IF conditional_expression_list NEW_LINE statement_body ELSE statement_body END terminator
   ;
 while_statement:
-  WHILE conditional_expression NEW_LINE statement_body END;
+  WHILE conditional_expression_list NEW_LINE statement_body END terminator;
+
+do_while_statement:
+  DO statement_body NEW_LINE WHILE conditional_expression_list terminator;
 
 statement_body:
   statement
