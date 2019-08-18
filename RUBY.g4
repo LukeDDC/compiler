@@ -8,11 +8,14 @@ statement: declaration_statement
   | while_statement
   | do_while_statement
   | assign_statement
+  | for_statement
   ;
 
 declaration_statement: type ':' ID ASSIGN expression terminator;
 
 assign_statement: ID ASSIGN expression terminator;
+
+for_statement: FOR (expression | declaration_statement) SEMICOLON conditional_expression_list SEMICOLON assign_statement? NEW_LINE statement_body END terminator;
 
 if_statement:
   IF conditional_expression_list NEW_LINE statement_body END terminator
@@ -103,6 +106,7 @@ ELSE: 'else';
 WHILE: 'while';
 DO: 'do';
 END: 'end';
+FOR: 'for';
 
 // KEYWORDS TYPES
 INT_T:    'Integer';
