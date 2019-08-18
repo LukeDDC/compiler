@@ -11,11 +11,12 @@ statement: declaration_statement
   | for_statement
   ;
 
-declaration_statement: type ':' ID ASSIGN expression terminator;
+declaration_statement: type ':' ID terminator
+  | type ':' assign_statement;
 
 assign_statement: ID ASSIGN expression terminator;
 
-for_statement: FOR (expression | declaration_statement) SEMICOLON conditional_expression_list SEMICOLON assign_statement? NEW_LINE statement_body END terminator;
+for_statement: FOR (expression | declaration_statement | assign_statement) SEMICOLON conditional_expression_list SEMICOLON assign_statement? NEW_LINE statement_body END terminator;
 
 if_statement:
   IF conditional_expression_list NEW_LINE statement_body END terminator
@@ -56,7 +57,6 @@ conditional_expression_list:
 conditional_expression:
   expression conditional_operator expression
   ;
-
 
 terminator:
   | NEW_LINE
