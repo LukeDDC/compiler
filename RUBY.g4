@@ -1,9 +1,22 @@
 grammar RUBY;
 
 program:
-  statement+;
+  function_declarion+;
 
-statement: declaration_statement
+function_declarion
+  : DEF ID ':' type '(' parameters? ')'  NEW_LINE statement* END terminator
+  ;
+
+parameters
+  : parameter (',' parameter)*
+  ;
+
+parameter
+  : type ID
+  ;
+
+statement
+  : declaration_statement
   | if_statement
   | while_statement
   | do_while_statement
@@ -36,6 +49,7 @@ statement_body:
 type: INT_T
   | FLOAT_T
   | STRING_T
+  | VOID_T
   ;
 
 expression: expression '*' expression
@@ -107,12 +121,14 @@ WHILE: 'while';
 DO: 'do';
 END: 'end';
 FOR: 'for';
+DEF: 'def';
 
 // KEYWORDS TYPES
 INT_T:    'Integer';
 FLOAT_T:  'Float';
 STRING_T: 'String';
 BOOL_T: 'Bool';
+VOID_T: 'Void';
 
 ID: LETTER+
   ;
