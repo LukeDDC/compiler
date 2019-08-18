@@ -4,13 +4,13 @@
 
   [x] Definir tokens
 
-  [ ] Definir GLC
+  [X] Definir GLC
 
-[ ] Criar grámatica com antlr
+[X] Criar grámatica com antlr
 
-[ ] Criar lexer
+[X] Criar lexer
 
-[ ] Criar parser
+[X] Criar parser
 
 [ ] Analisador semântico
 
