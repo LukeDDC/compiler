@@ -2,7 +2,4 @@ alias antlr4='java -Xmx500M -cp "/usr/local/lib/antlr-4.7.1-complete.jar:$CLASSP
 
 alias grun='java -Xmx500M -cp "/usr/local/lib/antlr-4.7.1-complete.jar:$CLASSPATH" org.antlr.v4.gui.TestRig'
 
-export CLASSPATH="/usr/local/lib/antlr-4.7.1-complete.jar:$CLASSPATH"
-
-antlr4 RUBY.g4
-javac *.java
+antlr4 -o src/antlr/ -p app.antlr RUBY.g4
