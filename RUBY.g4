@@ -31,6 +31,8 @@ statement
   | do_while_statement
   | assign_statement
   | for_statement
+  | puts_statement
+  | gets_statement
   ;
 
 declaration_statement: type ':' ID terminator
@@ -39,6 +41,10 @@ declaration_statement: type ':' ID terminator
 assign_statement: ID ASSIGN expression terminator;
 
 for_statement: FOR (expression | declaration_statement | assign_statement) SEMICOLON conditional_expression_list SEMICOLON assign_statement? NEW_LINE statement_body END terminator;
+
+puts_statement: PUTS LPAREN (ID | expression ) RPAREN terminator;
+
+gets_statement: GETS LPAREN RPAREN terminator;
 
 if_statement:
   IF conditional_expression_list NEW_LINE statement_body END terminator
@@ -137,6 +143,8 @@ DO: 'do';
 END: 'end';
 FOR: 'for';
 DEF: 'def';
+GETS: 'gets';
+PUTS: 'puts';
 
 // KEYWORDS TYPES
 INT_T:    'Integer';
