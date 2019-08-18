@@ -121,6 +121,11 @@ public class RUBYParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitProgram(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitProgram(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ProgramContext program() throws RecognitionException {
@@ -185,6 +190,11 @@ public class RUBYParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitFunction_declarion(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitFunction_declarion(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -262,6 +272,11 @@ public class RUBYParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitFunction_body(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitFunction_body(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -352,6 +367,11 @@ public class RUBYParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitFunction_call(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitFunction_call(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Function_callContext function_call() throws RecognitionException {
@@ -411,6 +431,11 @@ public class RUBYParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitParameters(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitParameters(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ParametersContext parameters() throws RecognitionException {
@@ -468,6 +493,11 @@ public class RUBYParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitParameter(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitParameter(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ParameterContext parameter() throws RecognitionException {
@@ -523,6 +553,11 @@ public class RUBYParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitStatement(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -616,6 +651,11 @@ public class RUBYParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitDeclaration_statement(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitDeclaration_statement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Declaration_statementContext declaration_statement() throws RecognitionException {
@@ -682,6 +722,11 @@ public class RUBYParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitAssign_statement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitAssign_statement(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -752,6 +797,11 @@ public class RUBYParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitFor_statement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitFor_statement(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -852,6 +902,11 @@ public class RUBYParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitIf_statement(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitIf_statement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final If_statementContext if_statement() throws RecognitionException {
@@ -937,6 +992,11 @@ public class RUBYParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitWhile_statement(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitWhile_statement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final While_statementContext while_statement() throws RecognitionException {
@@ -995,6 +1055,11 @@ public class RUBYParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitDo_while_statement(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitDo_while_statement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Do_while_statementContext do_while_statement() throws RecognitionException {
@@ -1052,6 +1117,11 @@ public class RUBYParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitStatement_body(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitStatement_body(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1155,6 +1225,11 @@ public class RUBYParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitType(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitType(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final TypeContext type() throws RecognitionException {
@@ -1210,6 +1285,11 @@ public class RUBYParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitExpression(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1370,6 +1450,11 @@ public class RUBYParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitExpression_list(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitExpression_list(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Expression_listContext expression_list() throws RecognitionException {
@@ -1430,6 +1515,11 @@ public class RUBYParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitConditional_expression_list(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitConditional_expression_list(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1521,6 +1611,11 @@ public class RUBYParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitConditional_expression(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitConditional_expression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Conditional_expressionContext conditional_expression() throws RecognitionException {
@@ -1565,6 +1660,11 @@ public class RUBYParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitTerminator(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitTerminator(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1673,6 +1773,11 @@ public class RUBYParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitConditional_operator(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitConditional_operator(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
