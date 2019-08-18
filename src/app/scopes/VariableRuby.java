@@ -1,3 +1,5 @@
+package app.scopes;
+
 import app.scopes.RubySymbol;
 import app.scopes.RubySymbol.Type;
 
