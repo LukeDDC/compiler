@@ -1,46 +1,48 @@
 grammar RUBY;
 
 program:
-  statement*;
+  statement+;
 
 statement: declaration_statement
   | if_statement
-  | conditional_expression_list
-  | expression_list
   ;
 
-body:
+declaration_statement: type ':' ID ASSIGN expression terminator;
+if_statement:
+  IF conditional_expression_list NEW_LINE statement_body END terminator
+  | IF conditional_expression_list NEW_LINE statement_body ELSE statement_body END terminator
+  ;
+
+statement_body:
   statement
-  | expression
-  | statement terminator
-  ;
-
-declaration_statement: type ':' ID ASSIGN expression_list terminator;
-
-if_statement: IF conditional_expression_list body* END
-  | IF conditional_expression_list statement* ELSE NEW_LINE body* END;
+  | statement_body statement
+  | terminator;
 
 type: INT_T
   | FLOAT_T
   | STRING_T
   ;
 
-expression_list:
-  expression terminator
-  | expression_list expression terminator;
-
 expression: expression '*' expression
+  | expression '/' expression
   | expression ('+' | '-') expression
+  | '(' expression ')'
   | ID
   | INT
   | FLOAT
   | STRING
+  | BOOL_T
   ;
 
-conditional_expression_list: conditional_expression_list (AND | OR) conditional_expression terminator
-  | conditional_expression terminator
+conditional_expression_list:
+  conditional_expression_list (AND | OR) conditional_expression
+  | conditional_expression
   ;
-conditional_expression: expression conditional_operator expression;
+
+conditional_expression:
+  expression conditional_operator expression
+  ;
+
 
 terminator:
   | NEW_LINE
@@ -95,6 +97,7 @@ END: 'end';
 INT_T:    'Integer';
 FLOAT_T:  'Float';
 STRING_T: 'String';
+BOOL_T: 'Bool';
 
 ID: LETTER+
   ;
