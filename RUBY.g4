@@ -4,7 +4,15 @@ program:
   function_declarion+;
 
 function_declarion
-  : DEF ID ':' type '(' parameters? ')'  NEW_LINE statement* END terminator
+  : DEF ID ':' type '(' parameters? ')'  NEW_LINE function_body END terminator
+  ;
+
+function_body
+  : (function_call | statement)+
+  ;
+
+function_call
+  : ID '(' expression_list? ')' terminator
   ;
 
 parameters
@@ -44,6 +52,7 @@ do_while_statement:
 statement_body:
   statement
   | statement_body statement
+  | statement_body function_call
   | terminator;
 
 type: INT_T
@@ -52,7 +61,8 @@ type: INT_T
   | VOID_T
   ;
 
-expression: expression '*' expression
+expression
+  : expression '*' expression
   | expression '/' expression
   | expression ('+' | '-') expression
   | '(' expression ')'
@@ -61,6 +71,10 @@ expression: expression '*' expression
   | FLOAT
   | STRING
   | BOOL_T
+  ;
+
+expression_list
+  : expression (',' expression)*
   ;
 
 conditional_expression_list:
