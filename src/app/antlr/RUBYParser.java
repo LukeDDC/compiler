@@ -1,6 +1,5 @@
-package app.antlr;
-
 // Generated from RUBY.g4 by ANTLR 4.7.1
+package app.antlr;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -18,40 +17,40 @@ public class RUBYParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, GREATER_THAN_OR_EQUALS=2, LESSER_THAN_OR_EQUALS=3, GREATER_THAN=4,
-		LESSER_THAN=5, NOT_EQUALS=6, ASSIGN=7, EQUALS=8, AND=9, OR=10, ADD=11,
-		SUB=12, MULT=13, DIV=14, LPAREN=15, RPAREN=16, LBRACE=17, RBRACE=18, LBRACK=19,
-		RBRACK=20, SEMICOLON=21, COMMA=22, NEW_LINE=23, IF=24, ELSE=25, WHILE=26,
-		DO=27, END=28, FOR=29, DEF=30, INT_T=31, FLOAT_T=32, STRING_T=33, BOOL_T=34,
+		T__0=1, GREATER_THAN_OR_EQUALS=2, LESSER_THAN_OR_EQUALS=3, GREATER_THAN=4, 
+		LESSER_THAN=5, NOT_EQUALS=6, ASSIGN=7, EQUALS=8, AND=9, OR=10, ADD=11, 
+		SUB=12, MULT=13, DIV=14, LPAREN=15, RPAREN=16, LBRACE=17, RBRACE=18, LBRACK=19, 
+		RBRACK=20, SEMICOLON=21, COMMA=22, NEW_LINE=23, IF=24, ELSE=25, WHILE=26, 
+		DO=27, END=28, FOR=29, DEF=30, INT_T=31, FLOAT_T=32, STRING_T=33, BOOL_T=34, 
 		VOID_T=35, ID=36, INT=37, FLOAT=38, STRING=39, WS=40;
 	public static final int
-		RULE_program = 0, RULE_function_declarion = 1, RULE_function_body = 2,
-		RULE_function_call = 3, RULE_parameters = 4, RULE_parameter = 5, RULE_statement = 6,
-		RULE_declaration_statement = 7, RULE_assign_statement = 8, RULE_for_statement = 9,
-		RULE_if_statement = 10, RULE_while_statement = 11, RULE_do_while_statement = 12,
-		RULE_statement_body = 13, RULE_type = 14, RULE_expression = 15, RULE_expression_list = 16,
-		RULE_conditional_expression_list = 17, RULE_conditional_expression = 18,
+		RULE_program = 0, RULE_function_declarion = 1, RULE_function_body = 2, 
+		RULE_function_call = 3, RULE_parameters = 4, RULE_parameter = 5, RULE_statement = 6, 
+		RULE_declaration_statement = 7, RULE_assign_statement = 8, RULE_for_statement = 9, 
+		RULE_if_statement = 10, RULE_while_statement = 11, RULE_do_while_statement = 12, 
+		RULE_statement_body = 13, RULE_type = 14, RULE_expression = 15, RULE_expression_list = 16, 
+		RULE_conditional_expression_list = 17, RULE_conditional_expression = 18, 
 		RULE_terminator = 19, RULE_conditional_operator = 20;
 	public static final String[] ruleNames = {
-		"program", "function_declarion", "function_body", "function_call", "parameters",
-		"parameter", "statement", "declaration_statement", "assign_statement",
-		"for_statement", "if_statement", "while_statement", "do_while_statement",
-		"statement_body", "type", "expression", "expression_list", "conditional_expression_list",
+		"program", "function_declarion", "function_body", "function_call", "parameters", 
+		"parameter", "statement", "declaration_statement", "assign_statement", 
+		"for_statement", "if_statement", "while_statement", "do_while_statement", 
+		"statement_body", "type", "expression", "expression_list", "conditional_expression_list", 
 		"conditional_expression", "terminator", "conditional_operator"
 	};
 
 	private static final String[] _LITERAL_NAMES = {
-		null, "':'", "'>='", "'<='", "'>'", "'<'", "'!='", "'='", "'=='", "'&&'",
-		"'||'", "'+'", "'-'", "'*'", "'/'", "'('", "')'", "'{'", "'}'", "'['",
-		"']'", "';'", "','", null, "'if'", "'else'", "'while'", "'do'", "'end'",
+		null, "':'", "'>='", "'<='", "'>'", "'<'", "'!='", "'='", "'=='", "'&&'", 
+		"'||'", "'+'", "'-'", "'*'", "'/'", "'('", "')'", "'{'", "'}'", "'['", 
+		"']'", "';'", "','", null, "'if'", "'else'", "'while'", "'do'", "'end'", 
 		"'for'", "'def'", "'Integer'", "'Float'", "'String'", "'Bool'", "'Void'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
-		null, null, "GREATER_THAN_OR_EQUALS", "LESSER_THAN_OR_EQUALS", "GREATER_THAN",
-		"LESSER_THAN", "NOT_EQUALS", "ASSIGN", "EQUALS", "AND", "OR", "ADD", "SUB",
-		"MULT", "DIV", "LPAREN", "RPAREN", "LBRACE", "RBRACE", "LBRACK", "RBRACK",
-		"SEMICOLON", "COMMA", "NEW_LINE", "IF", "ELSE", "WHILE", "DO", "END",
-		"FOR", "DEF", "INT_T", "FLOAT_T", "STRING_T", "BOOL_T", "VOID_T", "ID",
+		null, null, "GREATER_THAN_OR_EQUALS", "LESSER_THAN_OR_EQUALS", "GREATER_THAN", 
+		"LESSER_THAN", "NOT_EQUALS", "ASSIGN", "EQUALS", "AND", "OR", "ADD", "SUB", 
+		"MULT", "DIV", "LPAREN", "RPAREN", "LBRACE", "RBRACE", "LBRACK", "RBRACK", 
+		"SEMICOLON", "COMMA", "NEW_LINE", "IF", "ELSE", "WHILE", "DO", "END", 
+		"FOR", "DEF", "INT_T", "FLOAT_T", "STRING_T", "BOOL_T", "VOID_T", "ID", 
 		"INT", "FLOAT", "STRING", "WS"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
@@ -131,7 +130,7 @@ public class RUBYParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(43);
+			setState(43); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
@@ -141,7 +140,7 @@ public class RUBYParser extends Parser {
 				function_declarion();
 				}
 				}
-				setState(45);
+				setState(45); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			} while ( _la==DEF );
@@ -285,7 +284,7 @@ public class RUBYParser extends Parser {
 			case ID:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(63);
+				setState(63); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				do {
@@ -307,7 +306,7 @@ public class RUBYParser extends Parser {
 						break;
 					}
 					}
-					setState(65);
+					setState(65); 
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << IF) | (1L << WHILE) | (1L << DO) | (1L << FOR) | (1L << INT_T) | (1L << FLOAT_T) | (1L << STRING_T) | (1L << VOID_T) | (1L << ID))) != 0) );
@@ -1120,7 +1119,7 @@ public class RUBYParser extends Parser {
 						}
 						break;
 					}
-					}
+					} 
 				}
 				setState(175);
 				_errHandler.sync(this);
@@ -1333,7 +1332,7 @@ public class RUBYParser extends Parser {
 						}
 						break;
 					}
-					}
+					} 
 				}
 				setState(203);
 				_errHandler.sync(this);
@@ -1481,7 +1480,7 @@ public class RUBYParser extends Parser {
 					setState(217);
 					conditional_expression();
 					}
-					}
+					} 
 				}
 				setState(222);
 				_errHandler.sync(this);
@@ -1637,7 +1636,7 @@ public class RUBYParser extends Parser {
 						}
 						break;
 					}
-					}
+					} 
 				}
 				setState(240);
 				_errHandler.sync(this);
