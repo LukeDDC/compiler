@@ -1,9 +1,10 @@
 grammar RUBY;
 
-program:
-  function_declarion+;
+program
+  : declaration_statement* function_declaration*
+  ;
 
-function_declarion
+function_declaration
   : DEF  ID '(' parameters? ')' ':' type NEW_LINE function_body END terminator
   ;
 

@@ -18,15 +18,15 @@ public interface RUBYListener extends ParseTreeListener {
 	 */
 	void exitProgram(RUBYParser.ProgramContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link RUBYParser#function_declarion}.
+	 * Enter a parse tree produced by {@link RUBYParser#function_declaration}.
 	 * @param ctx the parse tree
 	 */
-	void enterFunction_declarion(RUBYParser.Function_declarionContext ctx);
+	void enterFunction_declaration(RUBYParser.Function_declarationContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link RUBYParser#function_declarion}.
+	 * Exit a parse tree produced by {@link RUBYParser#function_declaration}.
 	 * @param ctx the parse tree
 	 */
-	void exitFunction_declarion(RUBYParser.Function_declarionContext ctx);
+	void exitFunction_declaration(RUBYParser.Function_declarationContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link RUBYParser#function_body}.
 	 * @param ctx the parse tree

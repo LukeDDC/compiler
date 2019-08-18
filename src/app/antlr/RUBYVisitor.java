@@ -17,11 +17,11 @@ public interface RUBYVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitProgram(RUBYParser.ProgramContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link RUBYParser#function_declarion}.
+	 * Visit a parse tree produced by {@link RUBYParser#function_declaration}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitFunction_declarion(RUBYParser.Function_declarionContext ctx);
+	T visitFunction_declaration(RUBYParser.Function_declarationContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link RUBYParser#function_body}.
 	 * @param ctx the parse tree

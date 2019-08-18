@@ -28,13 +28,13 @@ public class RUBYBaseListener implements RUBYListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFunction_declarion(RUBYParser.Function_declarionContext ctx) { }
+	@Override public void enterFunction_declaration(RUBYParser.Function_declarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFunction_declarion(RUBYParser.Function_declarionContext ctx) { }
+	@Override public void exitFunction_declaration(RUBYParser.Function_declarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
