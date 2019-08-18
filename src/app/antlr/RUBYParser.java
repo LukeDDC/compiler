@@ -1,4 +1,6 @@
-// Generated from /home/lucas/Projects/ufabc/compilers/compiler/RUBY.g4 by ANTLR 4.7.1
+package app.antlr;
+
+// Generated from RUBY.g4 by ANTLR 4.7.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -16,40 +18,40 @@ public class RUBYParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, GREATER_THAN_OR_EQUALS=2, LESSER_THAN_OR_EQUALS=3, GREATER_THAN=4, 
-		LESSER_THAN=5, NOT_EQUALS=6, ASSIGN=7, EQUALS=8, AND=9, OR=10, ADD=11, 
-		SUB=12, MULT=13, DIV=14, LPAREN=15, RPAREN=16, LBRACE=17, RBRACE=18, LBRACK=19, 
-		RBRACK=20, SEMICOLON=21, COMMA=22, NEW_LINE=23, IF=24, ELSE=25, WHILE=26, 
-		DO=27, END=28, FOR=29, DEF=30, INT_T=31, FLOAT_T=32, STRING_T=33, BOOL_T=34, 
+		T__0=1, GREATER_THAN_OR_EQUALS=2, LESSER_THAN_OR_EQUALS=3, GREATER_THAN=4,
+		LESSER_THAN=5, NOT_EQUALS=6, ASSIGN=7, EQUALS=8, AND=9, OR=10, ADD=11,
+		SUB=12, MULT=13, DIV=14, LPAREN=15, RPAREN=16, LBRACE=17, RBRACE=18, LBRACK=19,
+		RBRACK=20, SEMICOLON=21, COMMA=22, NEW_LINE=23, IF=24, ELSE=25, WHILE=26,
+		DO=27, END=28, FOR=29, DEF=30, INT_T=31, FLOAT_T=32, STRING_T=33, BOOL_T=34,
 		VOID_T=35, ID=36, INT=37, FLOAT=38, STRING=39, WS=40;
 	public static final int
-		RULE_program = 0, RULE_function_declarion = 1, RULE_function_body = 2, 
-		RULE_function_call = 3, RULE_parameters = 4, RULE_parameter = 5, RULE_statement = 6, 
-		RULE_declaration_statement = 7, RULE_assign_statement = 8, RULE_for_statement = 9, 
-		RULE_if_statement = 10, RULE_while_statement = 11, RULE_do_while_statement = 12, 
-		RULE_statement_body = 13, RULE_type = 14, RULE_expression = 15, RULE_expression_list = 16, 
-		RULE_conditional_expression_list = 17, RULE_conditional_expression = 18, 
+		RULE_program = 0, RULE_function_declarion = 1, RULE_function_body = 2,
+		RULE_function_call = 3, RULE_parameters = 4, RULE_parameter = 5, RULE_statement = 6,
+		RULE_declaration_statement = 7, RULE_assign_statement = 8, RULE_for_statement = 9,
+		RULE_if_statement = 10, RULE_while_statement = 11, RULE_do_while_statement = 12,
+		RULE_statement_body = 13, RULE_type = 14, RULE_expression = 15, RULE_expression_list = 16,
+		RULE_conditional_expression_list = 17, RULE_conditional_expression = 18,
 		RULE_terminator = 19, RULE_conditional_operator = 20;
 	public static final String[] ruleNames = {
-		"program", "function_declarion", "function_body", "function_call", "parameters", 
-		"parameter", "statement", "declaration_statement", "assign_statement", 
-		"for_statement", "if_statement", "while_statement", "do_while_statement", 
-		"statement_body", "type", "expression", "expression_list", "conditional_expression_list", 
+		"program", "function_declarion", "function_body", "function_call", "parameters",
+		"parameter", "statement", "declaration_statement", "assign_statement",
+		"for_statement", "if_statement", "while_statement", "do_while_statement",
+		"statement_body", "type", "expression", "expression_list", "conditional_expression_list",
 		"conditional_expression", "terminator", "conditional_operator"
 	};
 
 	private static final String[] _LITERAL_NAMES = {
-		null, "':'", "'>='", "'<='", "'>'", "'<'", "'!='", "'='", "'=='", "'&&'", 
-		"'||'", "'+'", "'-'", "'*'", "'/'", "'('", "')'", "'{'", "'}'", "'['", 
-		"']'", "';'", "','", null, "'if'", "'else'", "'while'", "'do'", "'end'", 
+		null, "':'", "'>='", "'<='", "'>'", "'<'", "'!='", "'='", "'=='", "'&&'",
+		"'||'", "'+'", "'-'", "'*'", "'/'", "'('", "')'", "'{'", "'}'", "'['",
+		"']'", "';'", "','", null, "'if'", "'else'", "'while'", "'do'", "'end'",
 		"'for'", "'def'", "'Integer'", "'Float'", "'String'", "'Bool'", "'Void'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
-		null, null, "GREATER_THAN_OR_EQUALS", "LESSER_THAN_OR_EQUALS", "GREATER_THAN", 
-		"LESSER_THAN", "NOT_EQUALS", "ASSIGN", "EQUALS", "AND", "OR", "ADD", "SUB", 
-		"MULT", "DIV", "LPAREN", "RPAREN", "LBRACE", "RBRACE", "LBRACK", "RBRACK", 
-		"SEMICOLON", "COMMA", "NEW_LINE", "IF", "ELSE", "WHILE", "DO", "END", 
-		"FOR", "DEF", "INT_T", "FLOAT_T", "STRING_T", "BOOL_T", "VOID_T", "ID", 
+		null, null, "GREATER_THAN_OR_EQUALS", "LESSER_THAN_OR_EQUALS", "GREATER_THAN",
+		"LESSER_THAN", "NOT_EQUALS", "ASSIGN", "EQUALS", "AND", "OR", "ADD", "SUB",
+		"MULT", "DIV", "LPAREN", "RPAREN", "LBRACE", "RBRACE", "LBRACK", "RBRACK",
+		"SEMICOLON", "COMMA", "NEW_LINE", "IF", "ELSE", "WHILE", "DO", "END",
+		"FOR", "DEF", "INT_T", "FLOAT_T", "STRING_T", "BOOL_T", "VOID_T", "ID",
 		"INT", "FLOAT", "STRING", "WS"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
@@ -112,6 +114,14 @@ public class RUBYParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_program; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterProgram(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitProgram(this);
+		}
 	}
 
 	public final ProgramContext program() throws RecognitionException {
@@ -121,7 +131,7 @@ public class RUBYParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(43); 
+			setState(43);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
@@ -131,7 +141,7 @@ public class RUBYParser extends Parser {
 				function_declarion();
 				}
 				}
-				setState(45); 
+				setState(45);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			} while ( _la==DEF );
@@ -169,6 +179,14 @@ public class RUBYParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_function_declarion; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterFunction_declarion(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitFunction_declarion(this);
+		}
 	}
 
 	public final Function_declarionContext function_declarion() throws RecognitionException {
@@ -238,6 +256,14 @@ public class RUBYParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_function_body; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterFunction_body(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitFunction_body(this);
+		}
 	}
 
 	public final Function_bodyContext function_body() throws RecognitionException {
@@ -259,7 +285,7 @@ public class RUBYParser extends Parser {
 			case ID:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(63); 
+				setState(63);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				do {
@@ -281,7 +307,7 @@ public class RUBYParser extends Parser {
 						break;
 					}
 					}
-					setState(65); 
+					setState(65);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << IF) | (1L << WHILE) | (1L << DO) | (1L << FOR) | (1L << INT_T) | (1L << FLOAT_T) | (1L << STRING_T) | (1L << VOID_T) | (1L << ID))) != 0) );
@@ -319,6 +345,14 @@ public class RUBYParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_function_call; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterFunction_call(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitFunction_call(this);
+		}
 	}
 
 	public final Function_callContext function_call() throws RecognitionException {
@@ -370,6 +404,14 @@ public class RUBYParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_parameters; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterParameters(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitParameters(this);
+		}
 	}
 
 	public final ParametersContext parameters() throws RecognitionException {
@@ -419,6 +461,14 @@ public class RUBYParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_parameter; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterParameter(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitParameter(this);
+		}
 	}
 
 	public final ParameterContext parameter() throws RecognitionException {
@@ -467,6 +517,14 @@ public class RUBYParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_statement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitStatement(this);
+		}
 	}
 
 	public final StatementContext statement() throws RecognitionException {
@@ -551,6 +609,14 @@ public class RUBYParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_declaration_statement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterDeclaration_statement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitDeclaration_statement(this);
+		}
 	}
 
 	public final Declaration_statementContext declaration_statement() throws RecognitionException {
@@ -610,6 +676,14 @@ public class RUBYParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_assign_statement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterAssign_statement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitAssign_statement(this);
+		}
 	}
 
 	public final Assign_statementContext assign_statement() throws RecognitionException {
@@ -672,6 +746,14 @@ public class RUBYParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_for_statement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterFor_statement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitFor_statement(this);
+		}
 	}
 
 	public final For_statementContext for_statement() throws RecognitionException {
@@ -763,6 +845,14 @@ public class RUBYParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_if_statement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterIf_statement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitIf_statement(this);
+		}
 	}
 
 	public final If_statementContext if_statement() throws RecognitionException {
@@ -840,6 +930,14 @@ public class RUBYParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_while_statement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterWhile_statement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitWhile_statement(this);
+		}
 	}
 
 	public final While_statementContext while_statement() throws RecognitionException {
@@ -890,6 +988,14 @@ public class RUBYParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_do_while_statement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterDo_while_statement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitDo_while_statement(this);
+		}
 	}
 
 	public final Do_while_statementContext do_while_statement() throws RecognitionException {
@@ -940,6 +1046,14 @@ public class RUBYParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_statement_body; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterStatement_body(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitStatement_body(this);
+		}
 	}
 
 	public final Statement_bodyContext statement_body() throws RecognitionException {
@@ -1006,7 +1120,7 @@ public class RUBYParser extends Parser {
 						}
 						break;
 					}
-					} 
+					}
 				}
 				setState(175);
 				_errHandler.sync(this);
@@ -1034,6 +1148,14 @@ public class RUBYParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_type; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterType(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitType(this);
+		}
 	}
 
 	public final TypeContext type() throws RecognitionException {
@@ -1082,6 +1204,14 @@ public class RUBYParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expression; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitExpression(this);
+		}
 	}
 
 	public final ExpressionContext expression() throws RecognitionException {
@@ -1203,7 +1333,7 @@ public class RUBYParser extends Parser {
 						}
 						break;
 					}
-					} 
+					}
 				}
 				setState(203);
 				_errHandler.sync(this);
@@ -1233,6 +1363,14 @@ public class RUBYParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expression_list; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterExpression_list(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitExpression_list(this);
+		}
 	}
 
 	public final Expression_listContext expression_list() throws RecognitionException {
@@ -1286,6 +1424,14 @@ public class RUBYParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_conditional_expression_list; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterConditional_expression_list(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitConditional_expression_list(this);
+		}
 	}
 
 	public final Conditional_expression_listContext conditional_expression_list() throws RecognitionException {
@@ -1335,7 +1481,7 @@ public class RUBYParser extends Parser {
 					setState(217);
 					conditional_expression();
 					}
-					} 
+					}
 				}
 				setState(222);
 				_errHandler.sync(this);
@@ -1368,6 +1514,14 @@ public class RUBYParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_conditional_expression; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterConditional_expression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitConditional_expression(this);
+		}
 	}
 
 	public final Conditional_expressionContext conditional_expression() throws RecognitionException {
@@ -1405,6 +1559,14 @@ public class RUBYParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_terminator; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterTerminator(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitTerminator(this);
+		}
 	}
 
 	public final TerminatorContext terminator() throws RecognitionException {
@@ -1475,7 +1637,7 @@ public class RUBYParser extends Parser {
 						}
 						break;
 					}
-					} 
+					}
 				}
 				setState(240);
 				_errHandler.sync(this);
@@ -1505,6 +1667,14 @@ public class RUBYParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_conditional_operator; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterConditional_operator(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitConditional_operator(this);
+		}
 	}
 
 	public final Conditional_operatorContext conditional_operator() throws RecognitionException {
