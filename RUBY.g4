@@ -4,7 +4,7 @@ program:
   function_declarion+;
 
 function_declarion
-  : DEF ID ':' type '(' parameters? ')'  NEW_LINE function_body END terminator
+  : DEF  ID '(' parameters? ')' ':' type NEW_LINE function_body END terminator
   ;
 
 function_body
