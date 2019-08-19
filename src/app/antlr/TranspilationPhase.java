@@ -45,4 +45,8 @@ public class TranspilationPhase extends RUBYBaseListener {
   @Override public void exitProgram(RUBYParser.ProgramContext ctx) {
     writer.exitProgram();
   }
+
+  @Override public void enterDeclaration_statement(RUBYParser.Declaration_statementContext ctx) {
+    writer.enterDeclaration_statement(ctx);
+  }
 }

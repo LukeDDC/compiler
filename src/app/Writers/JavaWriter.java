@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.List;
 
 import app.antlr.RUBYParser;
+import app.antlr.RUBYParser.Declaration_statementContext;
 import app.antlr.RUBYParser.ParameterContext;
 import app.antlr.RUBYParser.ParametersContext;
 
@@ -84,5 +85,15 @@ public class JavaWriter {
 
   public void enterFunction_body() {
     printWriter.println(" {");
+  }
+
+  public void enterDeclaration_statement(Declaration_statementContext ctx) {
+    String variableType = ctx.type().getText();
+    String javaType = translateToJavaType(variableType);
+    String variableName = ctx.ID().getText();
+    printWriter.print(javaType + " " + variableName);
+    if(ctx.ASSIGN() != null) {
+      printWriter.print(" =");
+    }
   }
 }
