@@ -124,13 +124,13 @@ public class RUBYBaseListener implements RUBYListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAssign_statement(RUBYParser.Assign_statementContext ctx) { }
+	@Override public void enterAssign(RUBYParser.AssignContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAssign_statement(RUBYParser.Assign_statementContext ctx) { }
+	@Override public void exitAssign(RUBYParser.AssignContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

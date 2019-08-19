@@ -15,8 +15,8 @@ import app.scopes.VariableRuby;
  * DefinitionPhase
  */
 public class DefinitionPhase extends RUBYBaseListener{
-  ParseTreeProperty<Scope> scopes = new ParseTreeProperty<Scope>();
-  GlobalScope globalScope;
+  public ParseTreeProperty<Scope> scopes = new ParseTreeProperty<Scope>();
+  public GlobalScope globalScope;
   Scope currentScope;
 
 	@Override public void enterProgram(RUBYParser.ProgramContext ctx) {

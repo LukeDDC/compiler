@@ -44,7 +44,8 @@ declaration_statement
   : type ':' ID (ASSIGN expression)? terminator
   ;
 
-assign_statement: ID ASSIGN expression terminator;
+assign_statement
+  : ID ASSIGN expression terminator #Assign;
 
 for_statement: FOR (expression | declaration_statement | assign_statement) SEMICOLON conditional_expression_list SEMICOLON assign_statement? NEW_LINE statement_body END terminator;
 

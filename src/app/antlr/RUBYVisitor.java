@@ -66,11 +66,12 @@ public interface RUBYVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitDeclaration_statement(RUBYParser.Declaration_statementContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link RUBYParser#assign_statement}.
+	 * Visit a parse tree produced by the {@code Assign}
+	 * labeled alternative in {@link RUBYParser#assign_statement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAssign_statement(RUBYParser.Assign_statementContext ctx);
+	T visitAssign(RUBYParser.AssignContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link RUBYParser#for_statement}.
 	 * @param ctx the parse tree

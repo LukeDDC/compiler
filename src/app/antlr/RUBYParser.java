@@ -814,6 +814,17 @@ public class RUBYParser extends Parser {
 	}
 
 	public static class Assign_statementContext extends ParserRuleContext {
+		public Assign_statementContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_assign_statement; }
+	 
+		public Assign_statementContext() { }
+		public void copyFrom(Assign_statementContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class AssignContext extends Assign_statementContext {
 		public TerminalNode ID() { return getToken(RUBYParser.ID, 0); }
 		public TerminalNode ASSIGN() { return getToken(RUBYParser.ASSIGN, 0); }
 		public ExpressionContext expression() {
@@ -822,21 +833,18 @@ public class RUBYParser extends Parser {
 		public TerminatorContext terminator() {
 			return getRuleContext(TerminatorContext.class,0);
 		}
-		public Assign_statementContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_assign_statement; }
+		public AssignContext(Assign_statementContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterAssign_statement(this);
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterAssign(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitAssign_statement(this);
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitAssign(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitAssign_statement(this);
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitAssign(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -845,6 +853,7 @@ public class RUBYParser extends Parser {
 		Assign_statementContext _localctx = new Assign_statementContext(_ctx, getState());
 		enterRule(_localctx, 18, RULE_assign_statement);
 		try {
+			_localctx = new AssignContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(126);
