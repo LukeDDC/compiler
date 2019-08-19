@@ -9,6 +9,7 @@ import app.antlr.DefinitionPhase;
 import app.antlr.RUBYLexer;
 import app.antlr.RUBYParser;
 import app.antlr.ReferencePhase;
+import app.antlr.TranspilationPhase;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -31,6 +32,10 @@ public class App {
         ReferencePhase referencePhaseListener = new ReferencePhase(defPhaseListener.globalScope, defPhaseListener.scopes);
 
         walker.walk(referencePhaseListener, tree);
+
+        TranspilationPhase transpilationPhaseListener = new TranspilationPhase();
+
+        walker.walk(transpilationPhaseListener, tree);
 
         System.out.println("fim");
     }
