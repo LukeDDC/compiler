@@ -1,5 +1,7 @@
 package app.scopes;
 
+import app.antlr.RUBYParser;
+
 /***
  * Excerpted from "The Definitive ANTLR 4 Reference", published by The Pragmatic
  * Bookshelf. Copyrights apply to this code. It may not be used to create
@@ -8,19 +10,31 @@ package app.scopes;
  * Visit http://www.pragmaticprogrammer.com/titles/tpantlr2 for more book
  * information.
  ***/
-public class Symbol { // A generic programming language symbol
+public class RubySymbol { // A generic programming language symbol
     public static enum Type {tINVALID, tVOID, tINT, tFLOAT}
 
     String name;      // All symbols at least have a name
     Type type;
     Scope scope;      // All symbols know what scope contains them.
 
-    public Symbol(String name) { this.name = name; }
-    public Symbol(String name, Type type) { this(name); this.type = type; }
+    public RubySymbol(String name) { this.name = name; }
+    public RubySymbol(String name, Type type) { this(name); this.type = type; }
+    public RubySymbol(String name, int tokenType) {
+        this.name = name;
+    }
     public String getName() { return name; }
 
     public String toString() {
         if ( type!=Type.tINVALID ) return '<'+getName()+":"+type+'>';
         return getName();
+    }
+
+    public static RubySymbol.Type getType(int tokenType) {
+        switch ( tokenType ) {
+            case RUBYParser.VOID_T :  return RubySymbol.Type.tVOID;
+            case RUBYParser.INT_T :   return RubySymbol.Type.tINT;
+            case RUBYParser.FLOAT_T : return RubySymbol.Type.tFLOAT;
+        }
+        return RubySymbol.Type.tINVALID;
     }
 }

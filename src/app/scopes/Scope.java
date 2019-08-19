@@ -15,8 +15,8 @@ public interface Scope {
     public Scope getEnclosingScope();
 
     /** Define a symbol in the current scope */
-    public void define(Symbol sym);
+    public void define(RubySymbol sym);
 
     /** Look up name in this scope or in enclosing scope if not here */
-    public Symbol resolve(String name);
+    public RubySymbol resolve(String name);
 }
