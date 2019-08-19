@@ -2,12 +2,14 @@ package app.Writers;
 
 import java.io.FileWriter;
 import java.io.PrintWriter;
-import java.util.List;
 
 import app.antlr.RUBYParser;
+import app.antlr.RUBYParser.BoolContext;
 import app.antlr.RUBYParser.Declaration_statementContext;
+import app.antlr.RUBYParser.FloatContext;
+import app.antlr.RUBYParser.IntContext;
 import app.antlr.RUBYParser.ParameterContext;
-import app.antlr.RUBYParser.ParametersContext;
+import app.antlr.RUBYParser.VariableContext;
 
 /**
  * JavaWriter
@@ -93,7 +95,11 @@ public class JavaWriter {
     String variableName = ctx.ID().getText();
     printWriter.print(javaType + " " + variableName);
     if(ctx.ASSIGN() != null) {
-      printWriter.print(" =");
+      printWriter.print(" = ");
     }
+  }
+
+  public void enterPrimitiveType(RUBYParser.ExpressionContext ctx) {
+    printWriter.print(ctx.getText() + " ");
   }
 }

@@ -49,4 +49,24 @@ public class TranspilationPhase extends RUBYBaseListener {
   @Override public void enterDeclaration_statement(RUBYParser.Declaration_statementContext ctx) {
     writer.enterDeclaration_statement(ctx);
   }
+
+  @Override public void enterVariable(RUBYParser.VariableContext ctx) {
+    writer.enterPrimitiveType(ctx);
+  }
+
+  @Override public void enterInt(RUBYParser.IntContext ctx) {
+    writer.enterPrimitiveType(ctx);
+  }
+
+  @Override public void enterFloat(RUBYParser.FloatContext ctx) {
+    writer.enterPrimitiveType(ctx);
+  }
+
+  @Override public void enterBool(RUBYParser.BoolContext ctx) {
+    writer.enterPrimitiveType(ctx);
+  }
+
+  @Override public void enterString(RUBYParser.StringContext ctx) {
+    writer.enterPrimitiveType(ctx);
+  }
 }
