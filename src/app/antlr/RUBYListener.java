@@ -38,15 +38,17 @@ public interface RUBYListener extends ParseTreeListener {
 	 */
 	void exitFunction_body(RUBYParser.Function_bodyContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link RUBYParser#function_call}.
+	 * Enter a parse tree produced by the {@code FunctionCall}
+	 * labeled alternative in {@link RUBYParser#function_call}.
 	 * @param ctx the parse tree
 	 */
-	void enterFunction_call(RUBYParser.Function_callContext ctx);
+	void enterFunctionCall(RUBYParser.FunctionCallContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link RUBYParser#function_call}.
+	 * Exit a parse tree produced by the {@code FunctionCall}
+	 * labeled alternative in {@link RUBYParser#function_call}.
 	 * @param ctx the parse tree
 	 */
-	void exitFunction_call(RUBYParser.Function_callContext ctx);
+	void exitFunctionCall(RUBYParser.FunctionCallContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link RUBYParser#parameters}.
 	 * @param ctx the parse tree
@@ -77,6 +79,16 @@ public interface RUBYListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitStatement(RUBYParser.StatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link RUBYParser#statement_body}.
+	 * @param ctx the parse tree
+	 */
+	void enterStatement_body(RUBYParser.Statement_bodyContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RUBYParser#statement_body}.
+	 * @param ctx the parse tree
+	 */
+	void exitStatement_body(RUBYParser.Statement_bodyContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link RUBYParser#declaration_statement}.
 	 * @param ctx the parse tree
@@ -158,16 +170,6 @@ public interface RUBYListener extends ParseTreeListener {
 	 */
 	void exitDo_while_statement(RUBYParser.Do_while_statementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link RUBYParser#statement_body}.
-	 * @param ctx the parse tree
-	 */
-	void enterStatement_body(RUBYParser.Statement_bodyContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RUBYParser#statement_body}.
-	 * @param ctx the parse tree
-	 */
-	void exitStatement_body(RUBYParser.Statement_bodyContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link RUBYParser#type}.
 	 * @param ctx the parse tree
 	 */
@@ -178,15 +180,125 @@ public interface RUBYListener extends ParseTreeListener {
 	 */
 	void exitType(RUBYParser.TypeContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link RUBYParser#expression}.
+	 * Enter a parse tree produced by the {@code Div}
+	 * labeled alternative in {@link RUBYParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void enterExpression(RUBYParser.ExpressionContext ctx);
+	void enterDiv(RUBYParser.DivContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link RUBYParser#expression}.
+	 * Exit a parse tree produced by the {@code Div}
+	 * labeled alternative in {@link RUBYParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void exitExpression(RUBYParser.ExpressionContext ctx);
+	void exitDiv(RUBYParser.DivContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Add}
+	 * labeled alternative in {@link RUBYParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterAdd(RUBYParser.AddContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Add}
+	 * labeled alternative in {@link RUBYParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitAdd(RUBYParser.AddContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Float}
+	 * labeled alternative in {@link RUBYParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterFloat(RUBYParser.FloatContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Float}
+	 * labeled alternative in {@link RUBYParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitFloat(RUBYParser.FloatContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Sub}
+	 * labeled alternative in {@link RUBYParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterSub(RUBYParser.SubContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Sub}
+	 * labeled alternative in {@link RUBYParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitSub(RUBYParser.SubContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Variable}
+	 * labeled alternative in {@link RUBYParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterVariable(RUBYParser.VariableContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Variable}
+	 * labeled alternative in {@link RUBYParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitVariable(RUBYParser.VariableContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Mult}
+	 * labeled alternative in {@link RUBYParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterMult(RUBYParser.MultContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Mult}
+	 * labeled alternative in {@link RUBYParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitMult(RUBYParser.MultContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Bool}
+	 * labeled alternative in {@link RUBYParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterBool(RUBYParser.BoolContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Bool}
+	 * labeled alternative in {@link RUBYParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitBool(RUBYParser.BoolContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code String}
+	 * labeled alternative in {@link RUBYParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterString(RUBYParser.StringContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code String}
+	 * labeled alternative in {@link RUBYParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitString(RUBYParser.StringContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Enclouse}
+	 * labeled alternative in {@link RUBYParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterEnclouse(RUBYParser.EnclouseContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Enclouse}
+	 * labeled alternative in {@link RUBYParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitEnclouse(RUBYParser.EnclouseContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Int}
+	 * labeled alternative in {@link RUBYParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterInt(RUBYParser.IntContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Int}
+	 * labeled alternative in {@link RUBYParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitInt(RUBYParser.IntContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link RUBYParser#expression_list}.
 	 * @param ctx the parse tree

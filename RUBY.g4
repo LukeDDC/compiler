@@ -14,7 +14,7 @@ function_body
   ;
 
 function_call
-  : ID '(' expression_list? ')' terminator
+  : ID '(' expression_list? ')' terminator # FunctionCall
   ;
 
 parameters
@@ -22,7 +22,7 @@ parameters
   ;
 
 parameter
-  : type ID
+  : type ':' ID
   ;
 
 statement
@@ -36,8 +36,13 @@ statement
   | gets_statement
   ;
 
-declaration_statement: type ':' ID terminator
-  | type ':' assign_statement;
+statement_body
+  : statement*
+  ;
+
+declaration_statement
+  : type ':' ID (ASSIGN expression)? terminator
+  ;
 
 assign_statement: ID ASSIGN expression terminator;
 
@@ -57,12 +62,6 @@ while_statement:
 do_while_statement:
   DO statement_body NEW_LINE WHILE conditional_expression_list terminator;
 
-statement_body:
-  statement
-  | statement_body statement
-  | statement_body function_call
-  | terminator;
-
 type: INT_T
   | FLOAT_T
   | STRING_T
@@ -70,15 +69,16 @@ type: INT_T
   ;
 
 expression
-  : expression '*' expression
-  | expression '/' expression
-  | expression ('+' | '-') expression
-  | '(' expression ')'
-  | ID
-  | INT
-  | FLOAT
-  | STRING
-  | BOOL_T
+  : expression '*' expression #Mult
+  | expression '/' expression #Div
+  | expression '-' expression #Sub
+  | expression '+' expression #Add
+  | '(' expression ')'        #Enclouse
+  | ID                        #Variable
+  | INT                       #Int
+  | FLOAT                     #Float
+  | STRING                    #String
+  | BOOL_T                    #Bool
   ;
 
 expression_list

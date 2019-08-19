@@ -24,6 +24,10 @@ public class DefinitionPhase extends RUBYBaseListener{
     currentScope = globalScope;
   }
 
+  @Override public void exitProgram(RUBYParser.ProgramContext ctx) {
+    System.out.println(currentScope);
+  }
+
   @Override
   public void enterFunction_declaration(RUBYParser.Function_declarationContext ctx) {
     String functionName = ctx.ID().getText();
@@ -37,30 +41,31 @@ public class DefinitionPhase extends RUBYBaseListener{
   }
 
 	@Override public void exitFunction_declaration(RUBYParser.Function_declarationContext ctx) {
+    System.out.println(currentScope);
     currentScope = currentScope.getEnclosingScope();
   }
 
   @Override
   public void enterFunction_body(RUBYParser.Function_bodyContext ctx) {
-    LocalScope localScope = new LocalScope(scopes.get(ctx.getParent()));
-    saveScope(ctx, localScope);
-    currentScope = localScope;
+    currentScope = new LocalScope(currentScope);
+    saveScope(ctx, currentScope);
   }
 
   @Override
   public void exitFunction_body(RUBYParser.Function_bodyContext ctx) {
+    System.out.println(currentScope);
     currentScope = currentScope.getEnclosingScope();
   }
 
 	@Override
   public void enterStatement_body(RUBYParser.Statement_bodyContext ctx) {
-    LocalScope localScope = new LocalScope(scopes.get(ctx.getParent()));
-    saveScope(ctx, localScope);
-    currentScope = localScope;
+    currentScope = new LocalScope(currentScope);
+    saveScope(ctx, currentScope);
   }
 
   @Override
   public void exitStatement_body(RUBYParser.Statement_bodyContext ctx) {
+    System.out.println(currentScope);
     currentScope = currentScope.getEnclosingScope();
   }
 
