@@ -30,14 +30,16 @@ public class RUBYParser extends Parser {
 		RULE_statement_body = 7, RULE_declaration_statement = 8, RULE_assign_statement = 9, 
 		RULE_for_statement = 10, RULE_puts_statement = 11, RULE_gets_statement = 12, 
 		RULE_if_statement = 13, RULE_while_statement = 14, RULE_do_while_statement = 15, 
-		RULE_type = 16, RULE_expression = 17, RULE_expression_list = 18, RULE_conditional_expression_list = 19, 
-		RULE_conditional_expression = 20, RULE_terminator = 21, RULE_conditional_operator = 22;
+		RULE_type = 16, RULE_expression = 17, RULE_aritmetic_operator = 18, RULE_expression_list = 19, 
+		RULE_conditional_expression_list = 20, RULE_conditional_expression = 21, 
+		RULE_terminator = 22, RULE_conditional_operator = 23;
 	public static final String[] ruleNames = {
 		"program", "function_declaration", "function_body", "function_call", "parameters", 
 		"parameter", "statement", "statement_body", "declaration_statement", "assign_statement", 
 		"for_statement", "puts_statement", "gets_statement", "if_statement", "while_statement", 
-		"do_while_statement", "type", "expression", "expression_list", "conditional_expression_list", 
-		"conditional_expression", "terminator", "conditional_operator"
+		"do_while_statement", "type", "expression", "aritmetic_operator", "expression_list", 
+		"conditional_expression_list", "conditional_expression", "terminator", 
+		"conditional_operator"
 	};
 
 	private static final String[] _LITERAL_NAMES = {
@@ -143,31 +145,31 @@ public class RUBYParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(49);
+			setState(51);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << INT_T) | (1L << FLOAT_T) | (1L << STRING_T) | (1L << VOID_T))) != 0)) {
 				{
 				{
-				setState(46);
+				setState(48);
 				declaration_statement();
 				}
 				}
-				setState(51);
+				setState(53);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(55);
+			setState(57);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==DEF) {
 				{
 				{
-				setState(52);
+				setState(54);
 				function_declaration();
 				}
 				}
-				setState(57);
+				setState(59);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -227,35 +229,35 @@ public class RUBYParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(58);
-			match(DEF);
-			setState(59);
-			match(ID);
 			setState(60);
-			match(LPAREN);
+			match(DEF);
+			setState(61);
+			match(ID);
 			setState(62);
+			match(LPAREN);
+			setState(64);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << INT_T) | (1L << FLOAT_T) | (1L << STRING_T) | (1L << VOID_T))) != 0)) {
 				{
-				setState(61);
+				setState(63);
 				parameters();
 				}
 			}
 
-			setState(64);
-			match(RPAREN);
-			setState(65);
-			match(T__0);
 			setState(66);
-			type();
+			match(RPAREN);
 			setState(67);
-			match(NEW_LINE);
+			match(T__0);
 			setState(68);
-			function_body();
+			type();
 			setState(69);
-			match(END);
+			match(NEW_LINE);
 			setState(70);
+			function_body();
+			setState(71);
+			match(END);
+			setState(72);
 			terminator(0);
 			}
 		}
@@ -307,7 +309,7 @@ public class RUBYParser extends Parser {
 		enterRule(_localctx, 4, RULE_function_body);
 		int _la;
 		try {
-			setState(79);
+			setState(81);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case IF:
@@ -323,29 +325,29 @@ public class RUBYParser extends Parser {
 			case ID:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(74); 
+				setState(76); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				do {
 					{
-					setState(74);
+					setState(76);
 					_errHandler.sync(this);
 					switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
 					case 1:
 						{
-						setState(72);
+						setState(74);
 						function_call();
 						}
 						break;
 					case 2:
 						{
-						setState(73);
+						setState(75);
 						statement();
 						}
 						break;
 					}
 					}
-					setState(76); 
+					setState(78); 
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << IF) | (1L << WHILE) | (1L << DO) | (1L << FOR) | (1L << GETS) | (1L << PUTS) | (1L << INT_T) | (1L << FLOAT_T) | (1L << STRING_T) | (1L << VOID_T) | (1L << ID))) != 0) );
@@ -414,23 +416,23 @@ public class RUBYParser extends Parser {
 			_localctx = new FunctionCallContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(81);
+			setState(83);
 			match(ID);
-			setState(82);
-			match(LPAREN);
 			setState(84);
+			match(LPAREN);
+			setState(86);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << LPAREN) | (1L << BOOL_T) | (1L << ID) | (1L << INT) | (1L << FLOAT) | (1L << STRING))) != 0)) {
 				{
-				setState(83);
+				setState(85);
 				expression_list();
 				}
 			}
 
-			setState(86);
+			setState(88);
 			match(RPAREN);
-			setState(87);
+			setState(89);
 			terminator(0);
 			}
 		}
@@ -478,21 +480,21 @@ public class RUBYParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(89);
+			setState(91);
 			parameter();
-			setState(94);
+			setState(96);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==COMMA) {
 				{
 				{
-				setState(90);
+				setState(92);
 				match(COMMA);
-				setState(91);
+				setState(93);
 				parameter();
 				}
 				}
-				setState(96);
+				setState(98);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -539,11 +541,11 @@ public class RUBYParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(97);
-			type();
-			setState(98);
-			match(T__0);
 			setState(99);
+			type();
+			setState(100);
+			match(T__0);
+			setState(101);
 			match(ID);
 			}
 		}
@@ -606,7 +608,7 @@ public class RUBYParser extends Parser {
 		StatementContext _localctx = new StatementContext(_ctx, getState());
 		enterRule(_localctx, 12, RULE_statement);
 		try {
-			setState(109);
+			setState(111);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case INT_T:
@@ -615,56 +617,56 @@ public class RUBYParser extends Parser {
 			case VOID_T:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(101);
+				setState(103);
 				declaration_statement();
 				}
 				break;
 			case IF:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(102);
+				setState(104);
 				if_statement();
 				}
 				break;
 			case WHILE:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(103);
+				setState(105);
 				while_statement();
 				}
 				break;
 			case DO:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(104);
+				setState(106);
 				do_while_statement();
 				}
 				break;
 			case ID:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(105);
+				setState(107);
 				assign_statement();
 				}
 				break;
 			case FOR:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(106);
+				setState(108);
 				for_statement();
 				}
 				break;
 			case PUTS:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(107);
+				setState(109);
 				puts_statement();
 				}
 				break;
 			case GETS:
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(108);
+				setState(110);
 				gets_statement();
 				}
 				break;
@@ -716,17 +718,17 @@ public class RUBYParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(114);
+			setState(116);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << IF) | (1L << WHILE) | (1L << DO) | (1L << FOR) | (1L << GETS) | (1L << PUTS) | (1L << INT_T) | (1L << FLOAT_T) | (1L << STRING_T) | (1L << VOID_T) | (1L << ID))) != 0)) {
 				{
 				{
-				setState(111);
+				setState(113);
 				statement();
 				}
 				}
-				setState(116);
+				setState(118);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -780,25 +782,25 @@ public class RUBYParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(117);
-			type();
-			setState(118);
-			match(T__0);
 			setState(119);
+			type();
+			setState(120);
+			match(T__0);
+			setState(121);
 			match(ID);
-			setState(122);
+			setState(124);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,10,_ctx) ) {
 			case 1:
 				{
-				setState(120);
+				setState(122);
 				match(ASSIGN);
-				setState(121);
+				setState(123);
 				expression(0);
 				}
 				break;
 			}
-			setState(124);
+			setState(126);
 			terminator(0);
 			}
 		}
@@ -856,13 +858,13 @@ public class RUBYParser extends Parser {
 			_localctx = new AssignContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(126);
-			match(ID);
-			setState(127);
-			match(ASSIGN);
 			setState(128);
-			expression(0);
+			match(ID);
 			setState(129);
+			match(ASSIGN);
+			setState(130);
+			expression(0);
+			setState(131);
 			terminator(0);
 			}
 		}
@@ -932,53 +934,53 @@ public class RUBYParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(131);
+			setState(133);
 			match(FOR);
-			setState(135);
+			setState(137);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,11,_ctx) ) {
 			case 1:
 				{
-				setState(132);
+				setState(134);
 				expression(0);
 				}
 				break;
 			case 2:
 				{
-				setState(133);
+				setState(135);
 				declaration_statement();
 				}
 				break;
 			case 3:
 				{
-				setState(134);
+				setState(136);
 				assign_statement();
 				}
 				break;
 			}
-			setState(137);
-			match(SEMICOLON);
-			setState(138);
-			conditional_expression_list(0);
 			setState(139);
 			match(SEMICOLON);
+			setState(140);
+			conditional_expression_list(0);
 			setState(141);
+			match(SEMICOLON);
+			setState(143);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==ID) {
 				{
-				setState(140);
+				setState(142);
 				assign_statement();
 				}
 			}
 
-			setState(143);
-			match(NEW_LINE);
-			setState(144);
-			statement_body();
 			setState(145);
-			match(END);
+			match(NEW_LINE);
 			setState(146);
+			statement_body();
+			setState(147);
+			match(END);
+			setState(148);
 			terminator(0);
 			}
 		}
@@ -1029,29 +1031,29 @@ public class RUBYParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(148);
+			setState(150);
 			match(PUTS);
-			setState(149);
+			setState(151);
 			match(LPAREN);
-			setState(152);
+			setState(154);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,13,_ctx) ) {
 			case 1:
 				{
-				setState(150);
+				setState(152);
 				match(ID);
 				}
 				break;
 			case 2:
 				{
-				setState(151);
+				setState(153);
 				expression(0);
 				}
 				break;
 			}
-			setState(154);
+			setState(156);
 			match(RPAREN);
-			setState(155);
+			setState(157);
 			terminator(0);
 			}
 		}
@@ -1098,13 +1100,13 @@ public class RUBYParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(157);
-			match(GETS);
-			setState(158);
-			match(LPAREN);
 			setState(159);
-			match(RPAREN);
+			match(GETS);
 			setState(160);
+			match(LPAREN);
+			setState(161);
+			match(RPAREN);
+			setState(162);
 			terminator(0);
 			}
 		}
@@ -1159,44 +1161,44 @@ public class RUBYParser extends Parser {
 		If_statementContext _localctx = new If_statementContext(_ctx, getState());
 		enterRule(_localctx, 26, RULE_if_statement);
 		try {
-			setState(178);
+			setState(180);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,14,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(162);
-				match(IF);
-				setState(163);
-				conditional_expression_list(0);
 				setState(164);
-				match(NEW_LINE);
+				match(IF);
 				setState(165);
-				statement_body();
+				conditional_expression_list(0);
 				setState(166);
-				match(END);
+				match(NEW_LINE);
 				setState(167);
+				statement_body();
+				setState(168);
+				match(END);
+				setState(169);
 				terminator(0);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(169);
-				match(IF);
-				setState(170);
-				conditional_expression_list(0);
 				setState(171);
-				match(NEW_LINE);
+				match(IF);
 				setState(172);
-				statement_body();
+				conditional_expression_list(0);
 				setState(173);
-				match(ELSE);
+				match(NEW_LINE);
 				setState(174);
 				statement_body();
 				setState(175);
-				match(END);
+				match(ELSE);
 				setState(176);
+				statement_body();
+				setState(177);
+				match(END);
+				setState(178);
 				terminator(0);
 				}
 				break;
@@ -1251,17 +1253,17 @@ public class RUBYParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(180);
-			match(WHILE);
-			setState(181);
-			conditional_expression_list(0);
 			setState(182);
-			match(NEW_LINE);
+			match(WHILE);
 			setState(183);
-			statement_body();
+			conditional_expression_list(0);
 			setState(184);
-			match(END);
+			match(NEW_LINE);
 			setState(185);
+			statement_body();
+			setState(186);
+			match(END);
+			setState(187);
 			terminator(0);
 			}
 		}
@@ -1314,17 +1316,17 @@ public class RUBYParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(187);
-			match(DO);
-			setState(188);
-			statement_body();
 			setState(189);
-			match(NEW_LINE);
+			match(DO);
 			setState(190);
-			match(WHILE);
+			statement_body();
 			setState(191);
-			conditional_expression_list(0);
+			match(NEW_LINE);
 			setState(192);
+			match(WHILE);
+			setState(193);
+			conditional_expression_list(0);
+			setState(194);
 			terminator(0);
 			}
 		}
@@ -1370,7 +1372,7 @@ public class RUBYParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(194);
+			setState(196);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << INT_T) | (1L << FLOAT_T) | (1L << STRING_T) | (1L << VOID_T))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -1404,50 +1406,6 @@ public class RUBYParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
-	public static class DivContext extends ExpressionContext {
-		public List<ExpressionContext> expression() {
-			return getRuleContexts(ExpressionContext.class);
-		}
-		public ExpressionContext expression(int i) {
-			return getRuleContext(ExpressionContext.class,i);
-		}
-		public DivContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterDiv(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitDiv(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitDiv(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	public static class AddContext extends ExpressionContext {
-		public List<ExpressionContext> expression() {
-			return getRuleContexts(ExpressionContext.class);
-		}
-		public ExpressionContext expression(int i) {
-			return getRuleContext(ExpressionContext.class,i);
-		}
-		public AddContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterAdd(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitAdd(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitAdd(this);
-			else return visitor.visitChildren(this);
-		}
-	}
 	public static class FloatContext extends ExpressionContext {
 		public TerminalNode FLOAT() { return getToken(RUBYParser.FLOAT, 0); }
 		public FloatContext(ExpressionContext ctx) { copyFrom(ctx); }
@@ -1465,25 +1423,28 @@ public class RUBYParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
-	public static class SubContext extends ExpressionContext {
+	public static class AritmeticOperationContext extends ExpressionContext {
 		public List<ExpressionContext> expression() {
 			return getRuleContexts(ExpressionContext.class);
 		}
 		public ExpressionContext expression(int i) {
 			return getRuleContext(ExpressionContext.class,i);
 		}
-		public SubContext(ExpressionContext ctx) { copyFrom(ctx); }
+		public Aritmetic_operatorContext aritmetic_operator() {
+			return getRuleContext(Aritmetic_operatorContext.class,0);
+		}
+		public AritmeticOperationContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterSub(this);
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterAritmeticOperation(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitSub(this);
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitAritmeticOperation(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitSub(this);
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitAritmeticOperation(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1501,28 +1462,6 @@ public class RUBYParser extends Parser {
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitVariable(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	public static class MultContext extends ExpressionContext {
-		public List<ExpressionContext> expression() {
-			return getRuleContexts(ExpressionContext.class);
-		}
-		public ExpressionContext expression(int i) {
-			return getRuleContext(ExpressionContext.class,i);
-		}
-		public MultContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterMult(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitMult(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitMult(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1612,7 +1551,7 @@ public class RUBYParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(206);
+			setState(208);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case LPAREN:
@@ -1621,11 +1560,11 @@ public class RUBYParser extends Parser {
 				_ctx = _localctx;
 				_prevctx = _localctx;
 
-				setState(197);
-				match(LPAREN);
-				setState(198);
-				expression(0);
 				setState(199);
+				match(LPAREN);
+				setState(200);
+				expression(0);
+				setState(201);
 				match(RPAREN);
 				}
 				break;
@@ -1634,7 +1573,7 @@ public class RUBYParser extends Parser {
 				_localctx = new VariableContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(201);
+				setState(203);
 				match(ID);
 				}
 				break;
@@ -1643,7 +1582,7 @@ public class RUBYParser extends Parser {
 				_localctx = new IntContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(202);
+				setState(204);
 				match(INT);
 				}
 				break;
@@ -1652,7 +1591,7 @@ public class RUBYParser extends Parser {
 				_localctx = new FloatContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(203);
+				setState(205);
 				match(FLOAT);
 				}
 				break;
@@ -1661,7 +1600,7 @@ public class RUBYParser extends Parser {
 				_localctx = new StringContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(204);
+				setState(206);
 				match(STRING);
 				}
 				break;
@@ -1670,7 +1609,7 @@ public class RUBYParser extends Parser {
 				_localctx = new BoolContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(205);
+				setState(207);
 				match(BOOL_T);
 				}
 				break;
@@ -1678,71 +1617,29 @@ public class RUBYParser extends Parser {
 				throw new NoViableAltException(this);
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(222);
+			setState(216);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,17,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,16,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(220);
-					_errHandler.sync(this);
-					switch ( getInterpreter().adaptivePredict(_input,16,_ctx) ) {
-					case 1:
-						{
-						_localctx = new MultContext(new ExpressionContext(_parentctx, _parentState));
-						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(208);
-						if (!(precpred(_ctx, 10))) throw new FailedPredicateException(this, "precpred(_ctx, 10)");
-						setState(209);
-						match(MULT);
-						setState(210);
-						expression(11);
-						}
-						break;
-					case 2:
-						{
-						_localctx = new DivContext(new ExpressionContext(_parentctx, _parentState));
-						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(211);
-						if (!(precpred(_ctx, 9))) throw new FailedPredicateException(this, "precpred(_ctx, 9)");
-						setState(212);
-						match(DIV);
-						setState(213);
-						expression(10);
-						}
-						break;
-					case 3:
-						{
-						_localctx = new SubContext(new ExpressionContext(_parentctx, _parentState));
-						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(214);
-						if (!(precpred(_ctx, 8))) throw new FailedPredicateException(this, "precpred(_ctx, 8)");
-						setState(215);
-						match(SUB);
-						setState(216);
-						expression(9);
-						}
-						break;
-					case 4:
-						{
-						_localctx = new AddContext(new ExpressionContext(_parentctx, _parentState));
-						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(217);
-						if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
-						setState(218);
-						match(ADD);
-						setState(219);
-						expression(8);
-						}
-						break;
+					{
+					_localctx = new AritmeticOperationContext(new ExpressionContext(_parentctx, _parentState));
+					pushNewRecursionContext(_localctx, _startState, RULE_expression);
+					setState(210);
+					if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
+					setState(211);
+					aritmetic_operator();
+					setState(212);
+					expression(8);
 					}
 					} 
 				}
-				setState(224);
+				setState(218);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,17,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,16,_ctx);
 			}
 			}
 		}
@@ -1753,6 +1650,136 @@ public class RUBYParser extends Parser {
 		}
 		finally {
 			unrollRecursionContexts(_parentctx);
+		}
+		return _localctx;
+	}
+
+	public static class Aritmetic_operatorContext extends ParserRuleContext {
+		public Aritmetic_operatorContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_aritmetic_operator; }
+	 
+		public Aritmetic_operatorContext() { }
+		public void copyFrom(Aritmetic_operatorContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class DivContext extends Aritmetic_operatorContext {
+		public DivContext(Aritmetic_operatorContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterDiv(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitDiv(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitDiv(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class AddContext extends Aritmetic_operatorContext {
+		public AddContext(Aritmetic_operatorContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterAdd(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitAdd(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitAdd(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class SubContext extends Aritmetic_operatorContext {
+		public SubContext(Aritmetic_operatorContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterSub(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitSub(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitSub(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class MultContext extends Aritmetic_operatorContext {
+		public MultContext(Aritmetic_operatorContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).enterMult(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RUBYListener ) ((RUBYListener)listener).exitMult(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RUBYVisitor ) return ((RUBYVisitor<? extends T>)visitor).visitMult(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Aritmetic_operatorContext aritmetic_operator() throws RecognitionException {
+		Aritmetic_operatorContext _localctx = new Aritmetic_operatorContext(_ctx, getState());
+		enterRule(_localctx, 36, RULE_aritmetic_operator);
+		try {
+			setState(223);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case MULT:
+				_localctx = new MultContext(_localctx);
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(219);
+				match(MULT);
+				}
+				break;
+			case DIV:
+				_localctx = new DivContext(_localctx);
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(220);
+				match(DIV);
+				}
+				break;
+			case SUB:
+				_localctx = new SubContext(_localctx);
+				enterOuterAlt(_localctx, 3);
+				{
+				setState(221);
+				match(SUB);
+				}
+				break;
+			case ADD:
+				_localctx = new AddContext(_localctx);
+				enterOuterAlt(_localctx, 4);
+				{
+				setState(222);
+				match(ADD);
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
 		}
 		return _localctx;
 	}
@@ -1785,7 +1812,7 @@ public class RUBYParser extends Parser {
 
 	public final Expression_listContext expression_list() throws RecognitionException {
 		Expression_listContext _localctx = new Expression_listContext(_ctx, getState());
-		enterRule(_localctx, 36, RULE_expression_list);
+		enterRule(_localctx, 38, RULE_expression_list);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
@@ -1858,8 +1885,8 @@ public class RUBYParser extends Parser {
 		int _parentState = getState();
 		Conditional_expression_listContext _localctx = new Conditional_expression_listContext(_ctx, _parentState);
 		Conditional_expression_listContext _prevctx = _localctx;
-		int _startState = 38;
-		enterRecursionRule(_localctx, 38, RULE_conditional_expression_list, _p);
+		int _startState = 40;
+		enterRecursionRule(_localctx, 40, RULE_conditional_expression_list, _p);
 		int _la;
 		try {
 			int _alt;
@@ -1946,7 +1973,7 @@ public class RUBYParser extends Parser {
 
 	public final Conditional_expressionContext conditional_expression() throws RecognitionException {
 		Conditional_expressionContext _localctx = new Conditional_expressionContext(_ctx, getState());
-		enterRule(_localctx, 40, RULE_conditional_expression);
+		enterRule(_localctx, 42, RULE_conditional_expression);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -2003,8 +2030,8 @@ public class RUBYParser extends Parser {
 		int _parentState = getState();
 		TerminatorContext _localctx = new TerminatorContext(_ctx, _parentState);
 		TerminatorContext _prevctx = _localctx;
-		int _startState = 42;
-		enterRecursionRule(_localctx, 42, RULE_terminator, _p);
+		int _startState = 44;
+		enterRecursionRule(_localctx, 44, RULE_terminator, _p);
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
@@ -2109,7 +2136,7 @@ public class RUBYParser extends Parser {
 
 	public final Conditional_operatorContext conditional_operator() throws RecognitionException {
 		Conditional_operatorContext _localctx = new Conditional_operatorContext(_ctx, getState());
-		enterRule(_localctx, 44, RULE_conditional_operator);
+		enterRule(_localctx, 46, RULE_conditional_operator);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
@@ -2141,9 +2168,9 @@ public class RUBYParser extends Parser {
 		switch (ruleIndex) {
 		case 17:
 			return expression_sempred((ExpressionContext)_localctx, predIndex);
-		case 19:
+		case 20:
 			return conditional_expression_list_sempred((Conditional_expression_listContext)_localctx, predIndex);
-		case 21:
+		case 22:
 			return terminator_sempred((TerminatorContext)_localctx, predIndex);
 		}
 		return true;
@@ -2151,28 +2178,22 @@ public class RUBYParser extends Parser {
 	private boolean expression_sempred(ExpressionContext _localctx, int predIndex) {
 		switch (predIndex) {
 		case 0:
-			return precpred(_ctx, 10);
-		case 1:
-			return precpred(_ctx, 9);
-		case 2:
-			return precpred(_ctx, 8);
-		case 3:
 			return precpred(_ctx, 7);
 		}
 		return true;
 	}
 	private boolean conditional_expression_list_sempred(Conditional_expression_listContext _localctx, int predIndex) {
 		switch (predIndex) {
-		case 4:
+		case 1:
 			return precpred(_ctx, 2);
 		}
 		return true;
 	}
 	private boolean terminator_sempred(TerminatorContext _localctx, int predIndex) {
 		switch (predIndex) {
-		case 5:
+		case 2:
 			return precpred(_ctx, 2);
-		case 6:
+		case 3:
 			return precpred(_ctx, 1);
 		}
 		return true;
@@ -2182,90 +2203,90 @@ public class RUBYParser extends Parser {
 		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3,\u010b\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
 		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
-		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\3\2\7\2\62"+
-		"\n\2\f\2\16\2\65\13\2\3\2\7\28\n\2\f\2\16\2;\13\2\3\3\3\3\3\3\3\3\5\3"+
-		"A\n\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\4\3\4\6\4M\n\4\r\4\16\4N\3\4\5"+
-		"\4R\n\4\3\5\3\5\3\5\5\5W\n\5\3\5\3\5\3\5\3\6\3\6\3\6\7\6_\n\6\f\6\16\6"+
-		"b\13\6\3\7\3\7\3\7\3\7\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\5\bp\n\b\3\t\7"+
-		"\ts\n\t\f\t\16\tv\13\t\3\n\3\n\3\n\3\n\3\n\5\n}\n\n\3\n\3\n\3\13\3\13"+
-		"\3\13\3\13\3\13\3\f\3\f\3\f\3\f\5\f\u008a\n\f\3\f\3\f\3\f\3\f\5\f\u0090"+
-		"\n\f\3\f\3\f\3\f\3\f\3\f\3\r\3\r\3\r\3\r\5\r\u009b\n\r\3\r\3\r\3\r\3\16"+
-		"\3\16\3\16\3\16\3\16\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17"+
-		"\3\17\3\17\3\17\3\17\3\17\3\17\5\17\u00b5\n\17\3\20\3\20\3\20\3\20\3\20"+
-		"\3\20\3\20\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\22\3\22\3\23\3\23\3\23"+
-		"\3\23\3\23\3\23\3\23\3\23\3\23\3\23\5\23\u00d1\n\23\3\23\3\23\3\23\3\23"+
-		"\3\23\3\23\3\23\3\23\3\23\3\23\3\23\3\23\7\23\u00df\n\23\f\23\16\23\u00e2"+
-		"\13\23\3\24\3\24\3\24\7\24\u00e7\n\24\f\24\16\24\u00ea\13\24\3\25\3\25"+
-		"\3\25\3\25\3\25\3\25\7\25\u00f2\n\25\f\25\16\25\u00f5\13\25\3\26\3\26"+
-		"\3\26\3\26\3\27\3\27\3\27\5\27\u00fe\n\27\3\27\3\27\3\27\3\27\7\27\u0104"+
-		"\n\27\f\27\16\27\u0107\13\27\3\30\3\30\3\30\2\5$(,\31\2\4\6\b\n\f\16\20"+
-		"\22\24\26\30\32\34\36 \"$&(*,.\2\5\4\2#%\'\'\3\2\13\f\4\2\4\b\n\n\2\u0118"+
-		"\2\63\3\2\2\2\4<\3\2\2\2\6Q\3\2\2\2\bS\3\2\2\2\n[\3\2\2\2\fc\3\2\2\2\16"+
-		"o\3\2\2\2\20t\3\2\2\2\22w\3\2\2\2\24\u0080\3\2\2\2\26\u0085\3\2\2\2\30"+
-		"\u0096\3\2\2\2\32\u009f\3\2\2\2\34\u00b4\3\2\2\2\36\u00b6\3\2\2\2 \u00bd"+
-		"\3\2\2\2\"\u00c4\3\2\2\2$\u00d0\3\2\2\2&\u00e3\3\2\2\2(\u00eb\3\2\2\2"+
-		"*\u00f6\3\2\2\2,\u00fd\3\2\2\2.\u0108\3\2\2\2\60\62\5\22\n\2\61\60\3\2"+
-		"\2\2\62\65\3\2\2\2\63\61\3\2\2\2\63\64\3\2\2\2\649\3\2\2\2\65\63\3\2\2"+
-		"\2\668\5\4\3\2\67\66\3\2\2\28;\3\2\2\29\67\3\2\2\29:\3\2\2\2:\3\3\2\2"+
-		"\2;9\3\2\2\2<=\7 \2\2=>\7(\2\2>@\7\21\2\2?A\5\n\6\2@?\3\2\2\2@A\3\2\2"+
-		"\2AB\3\2\2\2BC\7\22\2\2CD\7\3\2\2DE\5\"\22\2EF\7\31\2\2FG\5\6\4\2GH\7"+
-		"\36\2\2HI\5,\27\2I\5\3\2\2\2JM\5\b\5\2KM\5\16\b\2LJ\3\2\2\2LK\3\2\2\2"+
-		"MN\3\2\2\2NL\3\2\2\2NO\3\2\2\2OR\3\2\2\2PR\3\2\2\2QL\3\2\2\2QP\3\2\2\2"+
-		"R\7\3\2\2\2ST\7(\2\2TV\7\21\2\2UW\5&\24\2VU\3\2\2\2VW\3\2\2\2WX\3\2\2"+
-		"\2XY\7\22\2\2YZ\5,\27\2Z\t\3\2\2\2[`\5\f\7\2\\]\7\30\2\2]_\5\f\7\2^\\"+
-		"\3\2\2\2_b\3\2\2\2`^\3\2\2\2`a\3\2\2\2a\13\3\2\2\2b`\3\2\2\2cd\5\"\22"+
-		"\2de\7\3\2\2ef\7(\2\2f\r\3\2\2\2gp\5\22\n\2hp\5\34\17\2ip\5\36\20\2jp"+
-		"\5 \21\2kp\5\24\13\2lp\5\26\f\2mp\5\30\r\2np\5\32\16\2og\3\2\2\2oh\3\2"+
-		"\2\2oi\3\2\2\2oj\3\2\2\2ok\3\2\2\2ol\3\2\2\2om\3\2\2\2on\3\2\2\2p\17\3"+
-		"\2\2\2qs\5\16\b\2rq\3\2\2\2sv\3\2\2\2tr\3\2\2\2tu\3\2\2\2u\21\3\2\2\2"+
-		"vt\3\2\2\2wx\5\"\22\2xy\7\3\2\2y|\7(\2\2z{\7\t\2\2{}\5$\23\2|z\3\2\2\2"+
-		"|}\3\2\2\2}~\3\2\2\2~\177\5,\27\2\177\23\3\2\2\2\u0080\u0081\7(\2\2\u0081"+
-		"\u0082\7\t\2\2\u0082\u0083\5$\23\2\u0083\u0084\5,\27\2\u0084\25\3\2\2"+
-		"\2\u0085\u0089\7\37\2\2\u0086\u008a\5$\23\2\u0087\u008a\5\22\n\2\u0088"+
-		"\u008a\5\24\13\2\u0089\u0086\3\2\2\2\u0089\u0087\3\2\2\2\u0089\u0088\3"+
-		"\2\2\2\u008a\u008b\3\2\2\2\u008b\u008c\7\27\2\2\u008c\u008d\5(\25\2\u008d"+
-		"\u008f\7\27\2\2\u008e\u0090\5\24\13\2\u008f\u008e\3\2\2\2\u008f\u0090"+
-		"\3\2\2\2\u0090\u0091\3\2\2\2\u0091\u0092\7\31\2\2\u0092\u0093\5\20\t\2"+
-		"\u0093\u0094\7\36\2\2\u0094\u0095\5,\27\2\u0095\27\3\2\2\2\u0096\u0097"+
-		"\7\"\2\2\u0097\u009a\7\21\2\2\u0098\u009b\7(\2\2\u0099\u009b\5$\23\2\u009a"+
-		"\u0098\3\2\2\2\u009a\u0099\3\2\2\2\u009b\u009c\3\2\2\2\u009c\u009d\7\22"+
-		"\2\2\u009d\u009e\5,\27\2\u009e\31\3\2\2\2\u009f\u00a0\7!\2\2\u00a0\u00a1"+
-		"\7\21\2\2\u00a1\u00a2\7\22\2\2\u00a2\u00a3\5,\27\2\u00a3\33\3\2\2\2\u00a4"+
-		"\u00a5\7\32\2\2\u00a5\u00a6\5(\25\2\u00a6\u00a7\7\31\2\2\u00a7\u00a8\5"+
-		"\20\t\2\u00a8\u00a9\7\36\2\2\u00a9\u00aa\5,\27\2\u00aa\u00b5\3\2\2\2\u00ab"+
-		"\u00ac\7\32\2\2\u00ac\u00ad\5(\25\2\u00ad\u00ae\7\31\2\2\u00ae\u00af\5"+
-		"\20\t\2\u00af\u00b0\7\33\2\2\u00b0\u00b1\5\20\t\2\u00b1\u00b2\7\36\2\2"+
-		"\u00b2\u00b3\5,\27\2\u00b3\u00b5\3\2\2\2\u00b4\u00a4\3\2\2\2\u00b4\u00ab"+
-		"\3\2\2\2\u00b5\35\3\2\2\2\u00b6\u00b7\7\34\2\2\u00b7\u00b8\5(\25\2\u00b8"+
-		"\u00b9\7\31\2\2\u00b9\u00ba\5\20\t\2\u00ba\u00bb\7\36\2\2\u00bb\u00bc"+
-		"\5,\27\2\u00bc\37\3\2\2\2\u00bd\u00be\7\35\2\2\u00be\u00bf\5\20\t\2\u00bf"+
-		"\u00c0\7\31\2\2\u00c0\u00c1\7\34\2\2\u00c1\u00c2\5(\25\2\u00c2\u00c3\5"+
-		",\27\2\u00c3!\3\2\2\2\u00c4\u00c5\t\2\2\2\u00c5#\3\2\2\2\u00c6\u00c7\b"+
-		"\23\1\2\u00c7\u00c8\7\21\2\2\u00c8\u00c9\5$\23\2\u00c9\u00ca\7\22\2\2"+
-		"\u00ca\u00d1\3\2\2\2\u00cb\u00d1\7(\2\2\u00cc\u00d1\7)\2\2\u00cd\u00d1"+
-		"\7*\2\2\u00ce\u00d1\7+\2\2\u00cf\u00d1\7&\2\2\u00d0\u00c6\3\2\2\2\u00d0"+
-		"\u00cb\3\2\2\2\u00d0\u00cc\3\2\2\2\u00d0\u00cd\3\2\2\2\u00d0\u00ce\3\2"+
-		"\2\2\u00d0\u00cf\3\2\2\2\u00d1\u00e0\3\2\2\2\u00d2\u00d3\f\f\2\2\u00d3"+
-		"\u00d4\7\17\2\2\u00d4\u00df\5$\23\r\u00d5\u00d6\f\13\2\2\u00d6\u00d7\7"+
-		"\20\2\2\u00d7\u00df\5$\23\f\u00d8\u00d9\f\n\2\2\u00d9\u00da\7\16\2\2\u00da"+
-		"\u00df\5$\23\13\u00db\u00dc\f\t\2\2\u00dc\u00dd\7\r\2\2\u00dd\u00df\5"+
-		"$\23\n\u00de\u00d2\3\2\2\2\u00de\u00d5\3\2\2\2\u00de\u00d8\3\2\2\2\u00de"+
-		"\u00db\3\2\2\2\u00df\u00e2\3\2\2\2\u00e0\u00de\3\2\2\2\u00e0\u00e1\3\2"+
-		"\2\2\u00e1%\3\2\2\2\u00e2\u00e0\3\2\2\2\u00e3\u00e8\5$\23\2\u00e4\u00e5"+
-		"\7\30\2\2\u00e5\u00e7\5$\23\2\u00e6\u00e4\3\2\2\2\u00e7\u00ea\3\2\2\2"+
-		"\u00e8\u00e6\3\2\2\2\u00e8\u00e9\3\2\2\2\u00e9\'\3\2\2\2\u00ea\u00e8\3"+
-		"\2\2\2\u00eb\u00ec\b\25\1\2\u00ec\u00ed\5*\26\2\u00ed\u00f3\3\2\2\2\u00ee"+
-		"\u00ef\f\4\2\2\u00ef\u00f0\t\3\2\2\u00f0\u00f2\5*\26\2\u00f1\u00ee\3\2"+
-		"\2\2\u00f2\u00f5\3\2\2\2\u00f3\u00f1\3\2\2\2\u00f3\u00f4\3\2\2\2\u00f4"+
-		")\3\2\2\2\u00f5\u00f3\3\2\2\2\u00f6\u00f7\5$\23\2\u00f7\u00f8\5.\30\2"+
-		"\u00f8\u00f9\5$\23\2\u00f9+\3\2\2\2\u00fa\u00fe\b\27\1\2\u00fb\u00fe\7"+
-		"\31\2\2\u00fc\u00fe\7\27\2\2\u00fd\u00fa\3\2\2\2\u00fd\u00fb\3\2\2\2\u00fd"+
-		"\u00fc\3\2\2\2\u00fe\u0105\3\2\2\2\u00ff\u0100\f\4\2\2\u0100\u0104\7\27"+
-		"\2\2\u0101\u0102\f\3\2\2\u0102\u0104\7\31\2\2\u0103\u00ff\3\2\2\2\u0103"+
-		"\u0101\3\2\2\2\u0104\u0107\3\2\2\2\u0105\u0103\3\2\2\2\u0105\u0106\3\2"+
-		"\2\2\u0106-\3\2\2\2\u0107\u0105\3\2\2\2\u0108\u0109\t\4\2\2\u0109/\3\2"+
-		"\2\2\31\639@LNQV`ot|\u0089\u008f\u009a\u00b4\u00d0\u00de\u00e0\u00e8\u00f3"+
-		"\u00fd\u0103\u0105";
+		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
+		"\3\2\7\2\64\n\2\f\2\16\2\67\13\2\3\2\7\2:\n\2\f\2\16\2=\13\2\3\3\3\3\3"+
+		"\3\3\3\5\3C\n\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\4\3\4\6\4O\n\4\r\4\16"+
+		"\4P\3\4\5\4T\n\4\3\5\3\5\3\5\5\5Y\n\5\3\5\3\5\3\5\3\6\3\6\3\6\7\6a\n\6"+
+		"\f\6\16\6d\13\6\3\7\3\7\3\7\3\7\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\5\br\n"+
+		"\b\3\t\7\tu\n\t\f\t\16\tx\13\t\3\n\3\n\3\n\3\n\3\n\5\n\177\n\n\3\n\3\n"+
+		"\3\13\3\13\3\13\3\13\3\13\3\f\3\f\3\f\3\f\5\f\u008c\n\f\3\f\3\f\3\f\3"+
+		"\f\5\f\u0092\n\f\3\f\3\f\3\f\3\f\3\f\3\r\3\r\3\r\3\r\5\r\u009d\n\r\3\r"+
+		"\3\r\3\r\3\16\3\16\3\16\3\16\3\16\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3"+
+		"\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\5\17\u00b7\n\17\3\20\3\20"+
+		"\3\20\3\20\3\20\3\20\3\20\3\21\3\21\3\21\3\21\3\21\3\21\3\21\3\22\3\22"+
+		"\3\23\3\23\3\23\3\23\3\23\3\23\3\23\3\23\3\23\3\23\5\23\u00d3\n\23\3\23"+
+		"\3\23\3\23\3\23\7\23\u00d9\n\23\f\23\16\23\u00dc\13\23\3\24\3\24\3\24"+
+		"\3\24\5\24\u00e2\n\24\3\25\3\25\3\25\7\25\u00e7\n\25\f\25\16\25\u00ea"+
+		"\13\25\3\26\3\26\3\26\3\26\3\26\3\26\7\26\u00f2\n\26\f\26\16\26\u00f5"+
+		"\13\26\3\27\3\27\3\27\3\27\3\30\3\30\3\30\5\30\u00fe\n\30\3\30\3\30\3"+
+		"\30\3\30\7\30\u0104\n\30\f\30\16\30\u0107\13\30\3\31\3\31\3\31\2\5$*."+
+		"\32\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,.\60\2\5\4\2#%\'\'\3"+
+		"\2\13\f\4\2\4\b\n\n\2\u0117\2\65\3\2\2\2\4>\3\2\2\2\6S\3\2\2\2\bU\3\2"+
+		"\2\2\n]\3\2\2\2\fe\3\2\2\2\16q\3\2\2\2\20v\3\2\2\2\22y\3\2\2\2\24\u0082"+
+		"\3\2\2\2\26\u0087\3\2\2\2\30\u0098\3\2\2\2\32\u00a1\3\2\2\2\34\u00b6\3"+
+		"\2\2\2\36\u00b8\3\2\2\2 \u00bf\3\2\2\2\"\u00c6\3\2\2\2$\u00d2\3\2\2\2"+
+		"&\u00e1\3\2\2\2(\u00e3\3\2\2\2*\u00eb\3\2\2\2,\u00f6\3\2\2\2.\u00fd\3"+
+		"\2\2\2\60\u0108\3\2\2\2\62\64\5\22\n\2\63\62\3\2\2\2\64\67\3\2\2\2\65"+
+		"\63\3\2\2\2\65\66\3\2\2\2\66;\3\2\2\2\67\65\3\2\2\28:\5\4\3\298\3\2\2"+
+		"\2:=\3\2\2\2;9\3\2\2\2;<\3\2\2\2<\3\3\2\2\2=;\3\2\2\2>?\7 \2\2?@\7(\2"+
+		"\2@B\7\21\2\2AC\5\n\6\2BA\3\2\2\2BC\3\2\2\2CD\3\2\2\2DE\7\22\2\2EF\7\3"+
+		"\2\2FG\5\"\22\2GH\7\31\2\2HI\5\6\4\2IJ\7\36\2\2JK\5.\30\2K\5\3\2\2\2L"+
+		"O\5\b\5\2MO\5\16\b\2NL\3\2\2\2NM\3\2\2\2OP\3\2\2\2PN\3\2\2\2PQ\3\2\2\2"+
+		"QT\3\2\2\2RT\3\2\2\2SN\3\2\2\2SR\3\2\2\2T\7\3\2\2\2UV\7(\2\2VX\7\21\2"+
+		"\2WY\5(\25\2XW\3\2\2\2XY\3\2\2\2YZ\3\2\2\2Z[\7\22\2\2[\\\5.\30\2\\\t\3"+
+		"\2\2\2]b\5\f\7\2^_\7\30\2\2_a\5\f\7\2`^\3\2\2\2ad\3\2\2\2b`\3\2\2\2bc"+
+		"\3\2\2\2c\13\3\2\2\2db\3\2\2\2ef\5\"\22\2fg\7\3\2\2gh\7(\2\2h\r\3\2\2"+
+		"\2ir\5\22\n\2jr\5\34\17\2kr\5\36\20\2lr\5 \21\2mr\5\24\13\2nr\5\26\f\2"+
+		"or\5\30\r\2pr\5\32\16\2qi\3\2\2\2qj\3\2\2\2qk\3\2\2\2ql\3\2\2\2qm\3\2"+
+		"\2\2qn\3\2\2\2qo\3\2\2\2qp\3\2\2\2r\17\3\2\2\2su\5\16\b\2ts\3\2\2\2ux"+
+		"\3\2\2\2vt\3\2\2\2vw\3\2\2\2w\21\3\2\2\2xv\3\2\2\2yz\5\"\22\2z{\7\3\2"+
+		"\2{~\7(\2\2|}\7\t\2\2}\177\5$\23\2~|\3\2\2\2~\177\3\2\2\2\177\u0080\3"+
+		"\2\2\2\u0080\u0081\5.\30\2\u0081\23\3\2\2\2\u0082\u0083\7(\2\2\u0083\u0084"+
+		"\7\t\2\2\u0084\u0085\5$\23\2\u0085\u0086\5.\30\2\u0086\25\3\2\2\2\u0087"+
+		"\u008b\7\37\2\2\u0088\u008c\5$\23\2\u0089\u008c\5\22\n\2\u008a\u008c\5"+
+		"\24\13\2\u008b\u0088\3\2\2\2\u008b\u0089\3\2\2\2\u008b\u008a\3\2\2\2\u008c"+
+		"\u008d\3\2\2\2\u008d\u008e\7\27\2\2\u008e\u008f\5*\26\2\u008f\u0091\7"+
+		"\27\2\2\u0090\u0092\5\24\13\2\u0091\u0090\3\2\2\2\u0091\u0092\3\2\2\2"+
+		"\u0092\u0093\3\2\2\2\u0093\u0094\7\31\2\2\u0094\u0095\5\20\t\2\u0095\u0096"+
+		"\7\36\2\2\u0096\u0097\5.\30\2\u0097\27\3\2\2\2\u0098\u0099\7\"\2\2\u0099"+
+		"\u009c\7\21\2\2\u009a\u009d\7(\2\2\u009b\u009d\5$\23\2\u009c\u009a\3\2"+
+		"\2\2\u009c\u009b\3\2\2\2\u009d\u009e\3\2\2\2\u009e\u009f\7\22\2\2\u009f"+
+		"\u00a0\5.\30\2\u00a0\31\3\2\2\2\u00a1\u00a2\7!\2\2\u00a2\u00a3\7\21\2"+
+		"\2\u00a3\u00a4\7\22\2\2\u00a4\u00a5\5.\30\2\u00a5\33\3\2\2\2\u00a6\u00a7"+
+		"\7\32\2\2\u00a7\u00a8\5*\26\2\u00a8\u00a9\7\31\2\2\u00a9\u00aa\5\20\t"+
+		"\2\u00aa\u00ab\7\36\2\2\u00ab\u00ac\5.\30\2\u00ac\u00b7\3\2\2\2\u00ad"+
+		"\u00ae\7\32\2\2\u00ae\u00af\5*\26\2\u00af\u00b0\7\31\2\2\u00b0\u00b1\5"+
+		"\20\t\2\u00b1\u00b2\7\33\2\2\u00b2\u00b3\5\20\t\2\u00b3\u00b4\7\36\2\2"+
+		"\u00b4\u00b5\5.\30\2\u00b5\u00b7\3\2\2\2\u00b6\u00a6\3\2\2\2\u00b6\u00ad"+
+		"\3\2\2\2\u00b7\35\3\2\2\2\u00b8\u00b9\7\34\2\2\u00b9\u00ba\5*\26\2\u00ba"+
+		"\u00bb\7\31\2\2\u00bb\u00bc\5\20\t\2\u00bc\u00bd\7\36\2\2\u00bd\u00be"+
+		"\5.\30\2\u00be\37\3\2\2\2\u00bf\u00c0\7\35\2\2\u00c0\u00c1\5\20\t\2\u00c1"+
+		"\u00c2\7\31\2\2\u00c2\u00c3\7\34\2\2\u00c3\u00c4\5*\26\2\u00c4\u00c5\5"+
+		".\30\2\u00c5!\3\2\2\2\u00c6\u00c7\t\2\2\2\u00c7#\3\2\2\2\u00c8\u00c9\b"+
+		"\23\1\2\u00c9\u00ca\7\21\2\2\u00ca\u00cb\5$\23\2\u00cb\u00cc\7\22\2\2"+
+		"\u00cc\u00d3\3\2\2\2\u00cd\u00d3\7(\2\2\u00ce\u00d3\7)\2\2\u00cf\u00d3"+
+		"\7*\2\2\u00d0\u00d3\7+\2\2\u00d1\u00d3\7&\2\2\u00d2\u00c8\3\2\2\2\u00d2"+
+		"\u00cd\3\2\2\2\u00d2\u00ce\3\2\2\2\u00d2\u00cf\3\2\2\2\u00d2\u00d0\3\2"+
+		"\2\2\u00d2\u00d1\3\2\2\2\u00d3\u00da\3\2\2\2\u00d4\u00d5\f\t\2\2\u00d5"+
+		"\u00d6\5&\24\2\u00d6\u00d7\5$\23\n\u00d7\u00d9\3\2\2\2\u00d8\u00d4\3\2"+
+		"\2\2\u00d9\u00dc\3\2\2\2\u00da\u00d8\3\2\2\2\u00da\u00db\3\2\2\2\u00db"+
+		"%\3\2\2\2\u00dc\u00da\3\2\2\2\u00dd\u00e2\7\17\2\2\u00de\u00e2\7\20\2"+
+		"\2\u00df\u00e2\7\16\2\2\u00e0\u00e2\7\r\2\2\u00e1\u00dd\3\2\2\2\u00e1"+
+		"\u00de\3\2\2\2\u00e1\u00df\3\2\2\2\u00e1\u00e0\3\2\2\2\u00e2\'\3\2\2\2"+
+		"\u00e3\u00e8\5$\23\2\u00e4\u00e5\7\30\2\2\u00e5\u00e7\5$\23\2\u00e6\u00e4"+
+		"\3\2\2\2\u00e7\u00ea\3\2\2\2\u00e8\u00e6\3\2\2\2\u00e8\u00e9\3\2\2\2\u00e9"+
+		")\3\2\2\2\u00ea\u00e8\3\2\2\2\u00eb\u00ec\b\26\1\2\u00ec\u00ed\5,\27\2"+
+		"\u00ed\u00f3\3\2\2\2\u00ee\u00ef\f\4\2\2\u00ef\u00f0\t\3\2\2\u00f0\u00f2"+
+		"\5,\27\2\u00f1\u00ee\3\2\2\2\u00f2\u00f5\3\2\2\2\u00f3\u00f1\3\2\2\2\u00f3"+
+		"\u00f4\3\2\2\2\u00f4+\3\2\2\2\u00f5\u00f3\3\2\2\2\u00f6\u00f7\5$\23\2"+
+		"\u00f7\u00f8\5\60\31\2\u00f8\u00f9\5$\23\2\u00f9-\3\2\2\2\u00fa\u00fe"+
+		"\b\30\1\2\u00fb\u00fe\7\31\2\2\u00fc\u00fe\7\27\2\2\u00fd\u00fa\3\2\2"+
+		"\2\u00fd\u00fb\3\2\2\2\u00fd\u00fc\3\2\2\2\u00fe\u0105\3\2\2\2\u00ff\u0100"+
+		"\f\4\2\2\u0100\u0104\7\27\2\2\u0101\u0102\f\3\2\2\u0102\u0104\7\31\2\2"+
+		"\u0103\u00ff\3\2\2\2\u0103\u0101\3\2\2\2\u0104\u0107\3\2\2\2\u0105\u0103"+
+		"\3\2\2\2\u0105\u0106\3\2\2\2\u0106/\3\2\2\2\u0107\u0105\3\2\2\2\u0108"+
+		"\u0109\t\4\2\2\u0109\61\3\2\2\2\31\65;BNPSXbqv~\u008b\u0091\u009c\u00b6"+
+		"\u00d2\u00da\u00e1\u00e8\u00f3\u00fd\u0103\u0105";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

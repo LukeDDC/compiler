@@ -69,4 +69,8 @@ public class TranspilationPhase extends RUBYBaseListener {
   @Override public void enterString(RUBYParser.StringContext ctx) {
     writer.enterPrimitiveType(ctx);
   }
+
+	@Override public void enterMult(RUBYParser.MultContext ctx) {
+
+  }
 }

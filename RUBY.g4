@@ -70,16 +70,20 @@ type: INT_T
   ;
 
 expression
-  : expression '*' expression #Mult
-  | expression '/' expression #Div
-  | expression '-' expression #Sub
-  | expression '+' expression #Add
+  : expression aritmetic_operator expression #AritmeticOperation
   | '(' expression ')'        #Enclouse
   | ID                        #Variable
   | INT                       #Int
   | FLOAT                     #Float
   | STRING                    #String
   | BOOL_T                    #Bool
+  ;
+
+aritmetic_operator
+  : '*' #Mult
+  | '/' #Div
+  | '-' #Sub
+  | '+' #Add
   ;
 
 expression_list

@@ -136,20 +136,6 @@ public class RUBYBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements R
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitDiv(RUBYParser.DivContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitAdd(RUBYParser.AddContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
 	@Override public T visitFloat(RUBYParser.FloatContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -157,7 +143,7 @@ public class RUBYBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements R
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitSub(RUBYParser.SubContext ctx) { return visitChildren(ctx); }
+	@Override public T visitAritmeticOperation(RUBYParser.AritmeticOperationContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -165,13 +151,6 @@ public class RUBYBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements R
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitVariable(RUBYParser.VariableContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitMult(RUBYParser.MultContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -200,6 +179,34 @@ public class RUBYBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements R
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitInt(RUBYParser.IntContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitMult(RUBYParser.MultContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitDiv(RUBYParser.DivContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitSub(RUBYParser.SubContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitAdd(RUBYParser.AddContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -220,30 +220,6 @@ public class RUBYBaseListener implements RUBYListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDiv(RUBYParser.DivContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitDiv(RUBYParser.DivContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterAdd(RUBYParser.AddContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitAdd(RUBYParser.AddContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterFloat(RUBYParser.FloatContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -256,13 +232,13 @@ public class RUBYBaseListener implements RUBYListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSub(RUBYParser.SubContext ctx) { }
+	@Override public void enterAritmeticOperation(RUBYParser.AritmeticOperationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSub(RUBYParser.SubContext ctx) { }
+	@Override public void exitAritmeticOperation(RUBYParser.AritmeticOperationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -275,18 +251,6 @@ public class RUBYBaseListener implements RUBYListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitVariable(RUBYParser.VariableContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterMult(RUBYParser.MultContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitMult(RUBYParser.MultContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -335,6 +299,54 @@ public class RUBYBaseListener implements RUBYListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitInt(RUBYParser.IntContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMult(RUBYParser.MultContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMult(RUBYParser.MultContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterDiv(RUBYParser.DivContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDiv(RUBYParser.DivContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSub(RUBYParser.SubContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSub(RUBYParser.SubContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAdd(RUBYParser.AddContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAdd(RUBYParser.AddContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

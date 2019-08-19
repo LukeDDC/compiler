@@ -115,20 +115,6 @@ public interface RUBYVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitType(RUBYParser.TypeContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code Div}
-	 * labeled alternative in {@link RUBYParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitDiv(RUBYParser.DivContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code Add}
-	 * labeled alternative in {@link RUBYParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitAdd(RUBYParser.AddContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code Float}
 	 * labeled alternative in {@link RUBYParser#expression}.
 	 * @param ctx the parse tree
@@ -136,12 +122,12 @@ public interface RUBYVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFloat(RUBYParser.FloatContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code Sub}
+	 * Visit a parse tree produced by the {@code AritmeticOperation}
 	 * labeled alternative in {@link RUBYParser#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSub(RUBYParser.SubContext ctx);
+	T visitAritmeticOperation(RUBYParser.AritmeticOperationContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code Variable}
 	 * labeled alternative in {@link RUBYParser#expression}.
@@ -149,13 +135,6 @@ public interface RUBYVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitVariable(RUBYParser.VariableContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code Mult}
-	 * labeled alternative in {@link RUBYParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitMult(RUBYParser.MultContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code Bool}
 	 * labeled alternative in {@link RUBYParser#expression}.
@@ -184,6 +163,34 @@ public interface RUBYVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitInt(RUBYParser.IntContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Mult}
+	 * labeled alternative in {@link RUBYParser#aritmetic_operator}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMult(RUBYParser.MultContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Div}
+	 * labeled alternative in {@link RUBYParser#aritmetic_operator}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDiv(RUBYParser.DivContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Sub}
+	 * labeled alternative in {@link RUBYParser#aritmetic_operator}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSub(RUBYParser.SubContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Add}
+	 * labeled alternative in {@link RUBYParser#aritmetic_operator}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAdd(RUBYParser.AddContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link RUBYParser#expression_list}.
 	 * @param ctx the parse tree
