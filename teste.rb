@@ -6,5 +6,5 @@ def function(Integer:bla, Integer:ble, String:bli, String:blo) : Void
 
   do
     ble = ble + 1
-  while(ble < 10)
+  while ble < 10
 end

@@ -74,7 +74,7 @@ while_block
   ;
 
 do_while_statement:
-	DO statement_body new_line while_block terminator;
+	DO new_line statement_body terminator while_block terminator;
 
 conditional
   : conditional_expression_list
