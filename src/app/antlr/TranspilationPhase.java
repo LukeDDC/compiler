@@ -70,7 +70,27 @@ public class TranspilationPhase extends RUBYBaseListener {
     writer.enterPrimitiveType(ctx);
   }
 
-	@Override public void enterMult(RUBYParser.MultContext ctx) {
+  @Override public void enterMult(RUBYParser.MultContext ctx) {
+    writer.enterAritmeticOperator(ctx);
+  }
 
+  @Override public void enterDiv(RUBYParser.DivContext ctx) {
+    writer.enterAritmeticOperator(ctx);
+  }
+
+  @Override public void enterSub(RUBYParser.SubContext ctx) {
+    writer.enterAritmeticOperator(ctx);
+  }
+
+  @Override public void enterAdd(RUBYParser.AddContext ctx) {
+    writer.enterAritmeticOperator(ctx);
+  }
+
+  @Override public void enterEnclouse(RUBYParser.EnclouseContext ctx) {
+    writer.enterEnclouse(ctx);
+   }
+
+  @Override public void exitEnclouse(RUBYParser.EnclouseContext ctx) {
+    writer.exitEnclouse(ctx);
   }
 }
