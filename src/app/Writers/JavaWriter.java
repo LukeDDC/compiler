@@ -4,12 +4,10 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 
 import app.antlr.RUBYParser;
-import app.antlr.RUBYParser.BoolContext;
+import app.antlr.RUBYParser.AritmeticOperationContext;
 import app.antlr.RUBYParser.Declaration_statementContext;
-import app.antlr.RUBYParser.FloatContext;
-import app.antlr.RUBYParser.IntContext;
+import app.antlr.RUBYParser.EnclouseContext;
 import app.antlr.RUBYParser.ParameterContext;
-import app.antlr.RUBYParser.VariableContext;
 
 /**
  * JavaWriter
@@ -101,5 +99,21 @@ public class JavaWriter {
 
   public void enterPrimitiveType(RUBYParser.ExpressionContext ctx) {
     printWriter.print(ctx.getText() + " ");
+  }
+
+  public void enterAritmeticOperation(AritmeticOperationContext ctx) {
+    printWriter.print(" " + ctx.getText() + " ");
+  }
+
+  public void enterAritmeticOperator(RUBYParser.Aritmetic_operatorContext ctx) {
+    printWriter.print(" " + ctx.getText() + " ");
+  }
+
+  public void enterEnclouse(EnclouseContext ctx) {
+    printWriter.print("( ");
+  }
+
+  public void exitEnclouse(EnclouseContext ctx) {
+    printWriter.print(")");
   }
 }
