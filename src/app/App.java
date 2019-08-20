@@ -5,11 +5,11 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
-import app.antlr.DefinitionPhase;
+import app.phases.DefinitionPhase;
 import app.antlr.RUBYLexer;
 import app.antlr.RUBYParser;
-import app.antlr.ReferencePhase;
-import app.antlr.TranspilationPhase;
+import app.phases.ReferencePhase;
+import app.phases.TranspilationPhase;
 
 public class App {
     public static void main(String[] args) throws Exception {

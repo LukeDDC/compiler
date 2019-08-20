@@ -1,4 +1,4 @@
-package app.antlr;
+package app.phases;
 
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.ParseTreeProperty;
