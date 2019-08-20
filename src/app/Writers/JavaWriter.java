@@ -9,10 +9,13 @@ import app.antlr.RUBYParser.ConditionalContext;
 import app.antlr.RUBYParser.Conditional_expression_listContext;
 import app.antlr.RUBYParser.Conditional_operatorContext;
 import app.antlr.RUBYParser.Declaration_statementContext;
+import app.antlr.RUBYParser.Do_while_statementContext;
 import app.antlr.RUBYParser.Else_statementContext;
 import app.antlr.RUBYParser.EnclouseContext;
 import app.antlr.RUBYParser.ParameterContext;
 import app.antlr.RUBYParser.Statement_bodyContext;
+import app.antlr.RUBYParser.While_blockContext;
+import app.antlr.RUBYParser.While_statementContext;
 
 /**
  * JavaWriter
@@ -160,4 +163,11 @@ public class JavaWriter {
     printWriter.print("\telse");
   }
 
+  public void enterDo_while_statement(Do_while_statementContext ctx) {
+    printWriter.print("\tdo ");
+  }
+
+  public void enterWhile_block(While_blockContext ctx) {
+    printWriter.print("\twhile ");
+  }
 }
