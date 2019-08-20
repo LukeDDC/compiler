@@ -4,6 +4,7 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 
 import app.antlr.RUBYParser;
+import app.antlr.RUBYParser.Additional_parameterContext;
 import app.antlr.RUBYParser.AritmeticOperationContext;
 import app.antlr.RUBYParser.ConditionalContext;
 import app.antlr.RUBYParser.Conditional_expression_listContext;
@@ -15,7 +16,6 @@ import app.antlr.RUBYParser.EnclouseContext;
 import app.antlr.RUBYParser.ParameterContext;
 import app.antlr.RUBYParser.Statement_bodyContext;
 import app.antlr.RUBYParser.While_blockContext;
-import app.antlr.RUBYParser.While_statementContext;
 
 /**
  * JavaWriter
@@ -57,7 +57,7 @@ public class JavaWriter {
     String javaType = translateToJavaType(parameterType);
     String parameterName = ctx.ID().getText();
 
-    printWriter.print(javaType + " " + parameterName + ", ");
+    printWriter.print(javaType + " " + parameterName);
   }
 
   public void exitFunction_declaration() {
@@ -169,5 +169,9 @@ public class JavaWriter {
 
   public void enterWhile_block(While_blockContext ctx) {
     printWriter.print("\twhile ");
+  }
+
+  public void enterAdditional_parameter(Additional_parameterContext ctx) {
+    printWriter.print(", ");
   }
 }

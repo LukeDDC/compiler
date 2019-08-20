@@ -22,11 +22,15 @@ function_call
   ;
 
 parameters
-  : parameter (',' parameter)*
+  : parameter additional_parameter*
   ;
 
 parameter
   : type ':' ID
+  ;
+
+additional_parameter
+  : ',' parameter
   ;
 
 statement

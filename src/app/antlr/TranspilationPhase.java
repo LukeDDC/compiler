@@ -154,4 +154,9 @@ public class TranspilationPhase extends RUBYBaseListener {
     writer.enterWhile_block(ctx);
   }
 
+	@Override
+  public void enterAdditional_parameter(RUBYParser.Additional_parameterContext ctx) {
+    writer.enterAdditional_parameter(ctx);
+  }
+
 }
