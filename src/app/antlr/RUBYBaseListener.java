@@ -196,6 +196,18 @@ public class RUBYBaseListener implements RUBYListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterElse_statement(RUBYParser.Else_statementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitElse_statement(RUBYParser.Else_statementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterWhile_statement(RUBYParser.While_statementContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -208,6 +220,18 @@ public class RUBYBaseListener implements RUBYListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterWhile_block(RUBYParser.While_blockContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitWhile_block(RUBYParser.While_blockContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterDo_while_statement(RUBYParser.Do_while_statementContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -215,6 +239,18 @@ public class RUBYBaseListener implements RUBYListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitDo_while_statement(RUBYParser.Do_while_statementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterConditional(RUBYParser.ConditionalContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitConditional(RUBYParser.ConditionalContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -395,6 +431,18 @@ public class RUBYBaseListener implements RUBYListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitConditional_expression(RUBYParser.Conditional_expressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterLogical_operator(RUBYParser.Logical_operatorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLogical_operator(RUBYParser.Logical_operatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

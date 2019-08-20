@@ -164,6 +164,16 @@ public interface RUBYListener extends ParseTreeListener {
 	 */
 	void exitIf_statement(RUBYParser.If_statementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link RUBYParser#else_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterElse_statement(RUBYParser.Else_statementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RUBYParser#else_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitElse_statement(RUBYParser.Else_statementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link RUBYParser#while_statement}.
 	 * @param ctx the parse tree
 	 */
@@ -174,6 +184,16 @@ public interface RUBYListener extends ParseTreeListener {
 	 */
 	void exitWhile_statement(RUBYParser.While_statementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link RUBYParser#while_block}.
+	 * @param ctx the parse tree
+	 */
+	void enterWhile_block(RUBYParser.While_blockContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RUBYParser#while_block}.
+	 * @param ctx the parse tree
+	 */
+	void exitWhile_block(RUBYParser.While_blockContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link RUBYParser#do_while_statement}.
 	 * @param ctx the parse tree
 	 */
@@ -183,6 +203,16 @@ public interface RUBYListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitDo_while_statement(RUBYParser.Do_while_statementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link RUBYParser#conditional}.
+	 * @param ctx the parse tree
+	 */
+	void enterConditional(RUBYParser.ConditionalContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RUBYParser#conditional}.
+	 * @param ctx the parse tree
+	 */
+	void exitConditional(RUBYParser.ConditionalContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link RUBYParser#type}.
 	 * @param ctx the parse tree
@@ -355,6 +385,16 @@ public interface RUBYListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitConditional_expression(RUBYParser.Conditional_expressionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link RUBYParser#logical_operator}.
+	 * @param ctx the parse tree
+	 */
+	void enterLogical_operator(RUBYParser.Logical_operatorContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RUBYParser#logical_operator}.
+	 * @param ctx the parse tree
+	 */
+	void exitLogical_operator(RUBYParser.Logical_operatorContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link RUBYParser#terminator}.
 	 * @param ctx the parse tree

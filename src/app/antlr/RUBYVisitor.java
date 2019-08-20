@@ -104,17 +104,35 @@ public interface RUBYVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitIf_statement(RUBYParser.If_statementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link RUBYParser#else_statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitElse_statement(RUBYParser.Else_statementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link RUBYParser#while_statement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitWhile_statement(RUBYParser.While_statementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link RUBYParser#while_block}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitWhile_block(RUBYParser.While_blockContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link RUBYParser#do_while_statement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitDo_while_statement(RUBYParser.Do_while_statementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link RUBYParser#conditional}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitConditional(RUBYParser.ConditionalContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link RUBYParser#type}.
 	 * @param ctx the parse tree
@@ -216,6 +234,12 @@ public interface RUBYVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitConditional_expression(RUBYParser.Conditional_expressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link RUBYParser#logical_operator}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLogical_operator(RUBYParser.Logical_operatorContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link RUBYParser#terminator}.
 	 * @param ctx the parse tree
