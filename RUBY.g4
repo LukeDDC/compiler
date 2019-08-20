@@ -67,10 +67,14 @@ else_statement
   ;
 
 while_statement:
-  WHILE conditional new_line statement_body END terminator;
+  while_block new_line statement_body END terminator;
+
+while_block
+  : WHILE conditional
+  ;
 
 do_while_statement:
-  DO statement_body new_line WHILE conditional terminator;
+	DO statement_body new_line while_block terminator;
 
 conditional
   : conditional_expression_list

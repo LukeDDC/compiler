@@ -144,4 +144,14 @@ public class TranspilationPhase extends RUBYBaseListener {
     writer.enterElse_statement(ctx);
   }
 
+	@Override
+  public void enterDo_while_statement(RUBYParser.Do_while_statementContext ctx) {
+    writer.enterDo_while_statement(ctx);
+  }
+
+  @Override
+  public void enterWhile_block(RUBYParser.While_blockContext ctx) {
+    writer.enterWhile_block(ctx);
+  }
+
 }
