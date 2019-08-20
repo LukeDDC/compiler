@@ -58,14 +58,23 @@ puts_statement: PUTS LPAREN (ID | expression ) RPAREN terminator;
 gets_statement: GETS LPAREN RPAREN terminator;
 
 if_statement:
-  IF conditional_expression_list new_line statement_body END terminator
-  | IF conditional_expression_list new_line statement_body ELSE statement_body END terminator
+  IF conditional new_line statement_body END terminator
+	| IF conditional new_line statement_body else_statement statement_body END terminator
   ;
+
+else_statement
+  : ELSE
+  ;
+
 while_statement:
-  WHILE conditional_expression_list new_line statement_body END terminator;
+  WHILE conditional new_line statement_body END terminator;
 
 do_while_statement:
-  DO statement_body new_line WHILE conditional_expression_list terminator;
+  DO statement_body new_line WHILE conditional terminator;
+
+conditional
+  : conditional_expression_list
+  ;
 
 type: INT_T
   | FLOAT_T
@@ -95,12 +104,18 @@ expression_list
   ;
 
 conditional_expression_list:
-  conditional_expression_list (AND | OR) conditional_expression
+  conditional_expression_list logical_operator conditional_expression
   | conditional_expression
   ;
 
-conditional_expression:
-  expression conditional_operator expression
+conditional_expression
+  : expression conditional_operator expression
+  | expression
+  ;
+
+logical_operator
+  : AND
+  | OR
   ;
 
 terminator:
