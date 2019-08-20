@@ -55,6 +55,12 @@ public interface RUBYVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitParameter(RUBYParser.ParameterContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link RUBYParser#additional_parameter}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAdditional_parameter(RUBYParser.Additional_parameterContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link RUBYParser#statement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
