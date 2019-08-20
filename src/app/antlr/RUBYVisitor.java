@@ -23,6 +23,12 @@ public interface RUBYVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFunction_declaration(RUBYParser.Function_declarationContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link RUBYParser#main_declaration}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMain_declaration(RUBYParser.Main_declarationContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code NewLine}
 	 * labeled alternative in {@link RUBYParser#new_line}.
 	 * @param ctx the parse tree
@@ -252,6 +258,12 @@ public interface RUBYVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitTerminator(RUBYParser.TerminatorContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link RUBYParser#terminator_token}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTerminator_token(RUBYParser.Terminator_tokenContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link RUBYParser#conditional_operator}.
 	 * @param ctx the parse tree

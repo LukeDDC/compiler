@@ -13,6 +13,7 @@ import app.antlr.RUBYParser.Declaration_statementContext;
 import app.antlr.RUBYParser.Do_while_statementContext;
 import app.antlr.RUBYParser.Else_statementContext;
 import app.antlr.RUBYParser.EnclouseContext;
+import app.antlr.RUBYParser.Main_declarationContext;
 import app.antlr.RUBYParser.ParameterContext;
 import app.antlr.RUBYParser.Statement_bodyContext;
 import app.antlr.RUBYParser.TerminatorContext;
@@ -46,11 +47,7 @@ public class JavaWriter {
 
   public void enterFunction_declaration(RUBYParser.Function_declarationContext ctx) {
     String functionName = ctx.ID().getText();
-    if (functionName.equals("main")) {
-      enterMain();
-    } else {
-      printWriter.print("\tpublic " + functionName + " ");
-    }
+    printWriter.print("\tpublic " + translateToJavaType(ctx.type().getText()) + " " + functionName + " ");
   }
 
   public void enterParameter(ParameterContext ctx) {
@@ -178,5 +175,13 @@ public class JavaWriter {
 
   public void exitTerminator(TerminatorContext ctx) {
     printWriter.print(" ;");
+  }
+
+  public void enterMain_declaration(Main_declarationContext ctx) {
+    enterMain();
+  }
+
+  public void exitMain_declaration(Main_declarationContext ctx) {
+    printWriter.print("\t}\n");
   }
 }

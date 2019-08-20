@@ -40,6 +40,18 @@ public class RUBYBaseListener implements RUBYListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterMain_declaration(RUBYParser.Main_declarationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMain_declaration(RUBYParser.Main_declarationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterNewLine(RUBYParser.NewLineContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -467,6 +479,18 @@ public class RUBYBaseListener implements RUBYListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitTerminator(RUBYParser.TerminatorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTerminator_token(RUBYParser.Terminator_tokenContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTerminator_token(RUBYParser.Terminator_tokenContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

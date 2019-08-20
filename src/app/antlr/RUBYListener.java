@@ -28,6 +28,16 @@ public interface RUBYListener extends ParseTreeListener {
 	 */
 	void exitFunction_declaration(RUBYParser.Function_declarationContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link RUBYParser#main_declaration}.
+	 * @param ctx the parse tree
+	 */
+	void enterMain_declaration(RUBYParser.Main_declarationContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RUBYParser#main_declaration}.
+	 * @param ctx the parse tree
+	 */
+	void exitMain_declaration(RUBYParser.Main_declarationContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code NewLine}
 	 * labeled alternative in {@link RUBYParser#new_line}.
 	 * @param ctx the parse tree
@@ -415,6 +425,16 @@ public interface RUBYListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitTerminator(RUBYParser.TerminatorContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link RUBYParser#terminator_token}.
+	 * @param ctx the parse tree
+	 */
+	void enterTerminator_token(RUBYParser.Terminator_tokenContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RUBYParser#terminator_token}.
+	 * @param ctx the parse tree
+	 */
+	void exitTerminator_token(RUBYParser.Terminator_tokenContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link RUBYParser#conditional_operator}.
 	 * @param ctx the parse tree
