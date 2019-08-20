@@ -10,6 +10,7 @@ import app.scopes.LocalScope;
 import app.scopes.RubySymbol;
 import app.scopes.Scope;
 import app.scopes.VariableRuby;
+import app.antlr.*;
 
 /**
  * DefinitionPhase

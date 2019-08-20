@@ -8,6 +8,7 @@ import app.scopes.GlobalScope;
 import app.scopes.RubySymbol;
 import app.scopes.Scope;
 import app.scopes.VariableRuby;
+import app.antlr.*;
 
 /**
  * ReferencePhase
