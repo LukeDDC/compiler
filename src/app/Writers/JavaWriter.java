@@ -15,7 +15,6 @@ import app.antlr.RUBYParser.EnclouseContext;
 import app.antlr.RUBYParser.ParameterContext;
 import app.antlr.RUBYParser.Statement_bodyContext;
 import app.antlr.RUBYParser.While_blockContext;
-import app.antlr.RUBYParser.While_statementContext;
 
 /**
  * JavaWriter
