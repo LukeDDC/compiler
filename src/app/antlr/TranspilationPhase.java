@@ -35,7 +35,7 @@ public class TranspilationPhase extends RUBYBaseListener {
   }
 
   @Override public void exitParameters(RUBYParser.ParametersContext ctx) {
-    writer.exitParameter();
+    writer.exitParameters();
   }
 
 	@Override public void enterFunction_body(RUBYParser.Function_bodyContext ctx) {

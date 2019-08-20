@@ -72,6 +72,10 @@ public class JavaWriter {
     printWriter.print("(");
   }
 
+  public void exitParameters() {
+    printWriter.print(")");
+  }
+
   private String translateToJavaType(String rubyType) {
     switch (rubyType) {
     case "Void":
@@ -85,10 +89,6 @@ public class JavaWriter {
     default:
       return "";
     }
-  }
-
-  public void exitParameter() {
-    printWriter.print(")");
   }
 
   public void enterFunction_body() {

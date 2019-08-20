@@ -5,7 +5,7 @@ program
   ;
 
 function_declaration
-  : DEF  ID '(' parameters? ')' ':' type new_line function_body END terminator
+  : DEF  ID parameters ':' type new_line function_body END terminator
   ;
 
 new_line
@@ -22,7 +22,7 @@ function_call
   ;
 
 parameters
-  : parameter additional_parameter*
+  : '(' parameter* additional_parameter* ')'
   ;
 
 parameter
