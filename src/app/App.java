@@ -33,7 +33,7 @@ public class App {
 
         walker.walk(referencePhaseListener, tree);
 
-        TranspilationPhase transpilationPhaseListener = new TranspilationPhase(defPhaseListener.globalScope, defPhaseListener.scopes);
+        TranspilationPhase transpilationPhaseListener = new TranspilationPhase();
 
         walker.walk(transpilationPhaseListener, tree);
 

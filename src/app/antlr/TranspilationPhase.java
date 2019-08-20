@@ -1,10 +1,6 @@
 package app.antlr;
 
-import org.antlr.v4.runtime.tree.ParseTreeProperty;
-
 import app.Writers.JavaWriter;
-import app.scopes.GlobalScope;
-import app.scopes.Scope;
 
 /**
  * TranspilationPhase
@@ -13,14 +9,6 @@ import app.scopes.Scope;
  */
 public class TranspilationPhase extends RUBYBaseListener {
   public JavaWriter writer;
-  ParseTreeProperty<Scope> scopes = new ParseTreeProperty<Scope>();
-  GlobalScope globalScope;
-  Scope currentScope;
-
-  public TranspilationPhase(GlobalScope globalScope, ParseTreeProperty<Scope> scopes) {
-    this.scopes = scopes;
-    this.globalScope = globalScope;
-  }
 
   @Override public void enterProgram(RUBYParser.ProgramContext ctx) {
     writer = new JavaWriter("Program.java");
@@ -55,7 +43,8 @@ public class TranspilationPhase extends RUBYBaseListener {
     writer.exitProgram();
   }
 
-  @Override public void enterDeclaration_statement(RUBYParser.Declaration_statementContext ctx) {
+  @Override
+  public void enterDeclaration_statement(RUBYParser.Declaration_statementContext ctx) {
     writer.enterDeclaration_statement(ctx);
   }
 

@@ -47,7 +47,7 @@ public class JavaWriter {
 
   public void enterFunction_declaration(RUBYParser.Function_declarationContext ctx) {
     String functionName = ctx.ID().getText();
-    printWriter.print("\tpublic " + translateToJavaType(ctx.type().getText()) + " " + functionName + " ");
+    printWriter.print("\tpublic static " + translateToJavaType(ctx.type().getText()) + " " + functionName + " ");
   }
 
   public void enterParameter(ParameterContext ctx) {
@@ -94,10 +94,15 @@ public class JavaWriter {
   }
 
   public void enterDeclaration_statement(Declaration_statementContext ctx) {
+
     String variableType = ctx.type().getText();
     String javaType = translateToJavaType(variableType);
     String variableName = ctx.ID().getText();
-    printWriter.print(javaType + " " + variableName);
+    if (ctx.parent.parent == null) {
+      printWriter.print("static " + javaType + " " + variableName);
+    } else {
+      printWriter.print(javaType + " " + variableName);
+    }
     if (ctx.ASSIGN() != null) {
       printWriter.print(" = ");
     }
