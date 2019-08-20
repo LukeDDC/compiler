@@ -66,16 +66,16 @@ public class JavaWriter {
 
   private String translateToJavaType(String rubyType) {
     switch (rubyType) {
-      case "Void":
-        return "void";
-      case "String":
-        return "String";
-      case "Integer":
-        return "int";
-      case "Float":
-        return "float";
-      default:
-        return "";
+    case "Void":
+      return "void";
+    case "String":
+      return "String";
+    case "Integer":
+      return "int";
+    case "Float":
+      return "float";
+    default:
+      return "";
     }
   }
 
@@ -92,7 +92,7 @@ public class JavaWriter {
     String javaType = translateToJavaType(variableType);
     String variableName = ctx.ID().getText();
     printWriter.print(javaType + " " + variableName);
-    if(ctx.ASSIGN() != null) {
+    if (ctx.ASSIGN() != null) {
       printWriter.print(" = ");
     }
   }
@@ -115,5 +115,9 @@ public class JavaWriter {
 
   public void exitEnclouse(EnclouseContext ctx) {
     printWriter.print(")");
+  }
+
+  public void enterIf_statement(RUBYParser.If_statementContext ctx) {
+    printWriter.println("");
   }
 }
