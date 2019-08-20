@@ -5,9 +5,9 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
-import app.antlr.DefinitionPhase;
 import app.antlr.RUBYLexer;
 import app.antlr.RUBYParser;
+import app.antlr.DefinitionPhase;
 import app.antlr.ReferencePhase;
 import app.antlr.TranspilationPhase;
 

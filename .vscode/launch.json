@@ -71,16 +71,6 @@
       "startRule": "program",
       "printParseTree": true,
       "visualParseTree": true
-    },
-
-    {
-      "name": "debug2",
-      "type": "antlr-debug",
-      "request": "launch",
-      "grammar": "RUBY.g4",
-      "startRule": "program",
-      "printParseTree": true,
-      "visualParseTree": true
     }
   ]
 }
