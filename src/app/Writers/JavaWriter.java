@@ -15,6 +15,7 @@ import app.antlr.RUBYParser.Else_statementContext;
 import app.antlr.RUBYParser.EnclouseContext;
 import app.antlr.RUBYParser.ParameterContext;
 import app.antlr.RUBYParser.Statement_bodyContext;
+import app.antlr.RUBYParser.TerminatorContext;
 import app.antlr.RUBYParser.While_blockContext;
 
 /**
@@ -173,5 +174,9 @@ public class JavaWriter {
 
   public void enterAdditional_parameter(Additional_parameterContext ctx) {
     printWriter.print(", ");
+  }
+
+  public void exitTerminator(TerminatorContext ctx) {
+    printWriter.print(" ;");
   }
 }

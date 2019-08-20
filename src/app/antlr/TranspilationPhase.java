@@ -159,4 +159,7 @@ public class TranspilationPhase extends RUBYBaseListener {
     writer.enterAdditional_parameter(ctx);
   }
 
+  @Override public void exitTerminator(RUBYParser.TerminatorContext ctx) {
+    writer.exitTerminator(ctx);
+  }
 }

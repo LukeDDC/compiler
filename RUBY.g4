@@ -1,11 +1,15 @@
 grammar RUBY;
 
 program
-  : declaration_statement* function_declaration*
+  : declaration_statement* function_declaration* main_declaration?
   ;
 
 function_declaration
-  : DEF  ID parameters ':' type new_line function_body END terminator
+  : DEF ID parameters ':' type new_line function_body END new_line*
+  ;
+
+main_declaration
+  : DEF 'main' ':' 'Void' new_line function_body END terminator
   ;
 
 new_line
@@ -62,8 +66,8 @@ puts_statement: PUTS LPAREN (ID | expression ) RPAREN terminator;
 gets_statement: GETS LPAREN RPAREN terminator;
 
 if_statement:
-  IF conditional new_line statement_body END terminator
-	| IF conditional new_line statement_body else_statement statement_body END terminator
+  IF conditional new_line statement_body END new_line*
+	| IF conditional new_line statement_body else_statement statement_body END new_line*
   ;
 
 else_statement
@@ -71,14 +75,14 @@ else_statement
   ;
 
 while_statement:
-  while_block new_line statement_body END terminator;
+  while_block new_line statement_body END new_line*;
 
 while_block
   : WHILE conditional
   ;
 
 do_while_statement:
-	DO new_line statement_body terminator while_block terminator;
+	DO new_line statement_body new_line* while_block terminator;
 
 conditional
   : conditional_expression_list
@@ -126,11 +130,17 @@ logical_operator
   | OR
   ;
 
-terminator:
+
+
+terminator
+  : terminator_token
+  ;
+
+terminator_token:
   | NEW_LINE
   | SEMICOLON
-  | terminator SEMICOLON
-  | terminator NEW_LINE
+  | terminator_token SEMICOLON
+  | terminator_token NEW_LINE
   ;
 
 conditional_operator: EQUALS
