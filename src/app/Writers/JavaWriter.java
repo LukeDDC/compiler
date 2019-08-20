@@ -5,9 +5,14 @@ import java.io.PrintWriter;
 
 import app.antlr.RUBYParser;
 import app.antlr.RUBYParser.AritmeticOperationContext;
+import app.antlr.RUBYParser.ConditionalContext;
+import app.antlr.RUBYParser.Conditional_expression_listContext;
+import app.antlr.RUBYParser.Conditional_operatorContext;
 import app.antlr.RUBYParser.Declaration_statementContext;
+import app.antlr.RUBYParser.Else_statementContext;
 import app.antlr.RUBYParser.EnclouseContext;
 import app.antlr.RUBYParser.ParameterContext;
+import app.antlr.RUBYParser.Statement_bodyContext;
 
 /**
  * JavaWriter
@@ -118,6 +123,41 @@ public class JavaWriter {
   }
 
   public void enterIf_statement(RUBYParser.If_statementContext ctx) {
-    printWriter.println("");
+    printWriter.print("\tif ");
   }
+
+  public void enterLogical_operator(RUBYParser.Logical_operatorContext ctx) {
+    printWriter.print(" " + ctx.getText() + " ");
+  }
+
+  public void enterConditional_operator(Conditional_operatorContext ctx) {
+    printWriter.print(" " + ctx.getText() + " ");
+  }
+
+  public void enterConditional_expression_list(Conditional_expression_listContext ctx) {
+  }
+
+  public void exitConditional_expression_list(Conditional_expression_listContext ctx) {
+  }
+
+  public void enterConditional(ConditionalContext ctx) {
+    printWriter.print("(");
+  }
+
+  public void exitConditional(ConditionalContext ctx) {
+    printWriter.print(")");
+  }
+
+  public void enterStatement_body(Statement_bodyContext ctx) {
+    printWriter.print("{\n");
+  }
+
+  public void exitStatement_body(Statement_bodyContext ctx) {
+    printWriter.print("\n\t}\n");
+  }
+
+  public void enterElse_statement(Else_statementContext ctx) {
+    printWriter.print("\telse");
+  }
+
 }
