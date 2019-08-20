@@ -93,4 +93,9 @@ public class TranspilationPhase extends RUBYBaseListener {
   @Override public void exitEnclouse(RUBYParser.EnclouseContext ctx) {
     writer.exitEnclouse(ctx);
   }
+
+  @Override
+  public void enterIf_statement(RUBYParser.If_statementContext ctx) {
+    writer.enterIf_statement(ctx);
+  }
 }

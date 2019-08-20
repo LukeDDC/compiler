@@ -5,7 +5,11 @@ program
   ;
 
 function_declaration
-  : DEF  ID '(' parameters? ')' ':' type NEW_LINE function_body END terminator
+  : DEF  ID '(' parameters? ')' ':' type new_line function_body END terminator
+  ;
+
+new_line
+  : NEW_LINE #NewLine
   ;
 
 function_body
@@ -47,21 +51,21 @@ declaration_statement
 assign_statement
   : ID ASSIGN expression terminator #Assign;
 
-for_statement: FOR (expression | declaration_statement | assign_statement) SEMICOLON conditional_expression_list SEMICOLON assign_statement? NEW_LINE statement_body END terminator;
+for_statement: FOR (expression | declaration_statement | assign_statement) SEMICOLON conditional_expression_list SEMICOLON assign_statement? new_line statement_body END terminator;
 
 puts_statement: PUTS LPAREN (ID | expression ) RPAREN terminator;
 
 gets_statement: GETS LPAREN RPAREN terminator;
 
 if_statement:
-  IF conditional_expression_list NEW_LINE statement_body END terminator
-  | IF conditional_expression_list NEW_LINE statement_body ELSE statement_body END terminator
+  IF conditional_expression_list new_line statement_body END terminator
+  | IF conditional_expression_list new_line statement_body ELSE statement_body END terminator
   ;
 while_statement:
-  WHILE conditional_expression_list NEW_LINE statement_body END terminator;
+  WHILE conditional_expression_list new_line statement_body END terminator;
 
 do_while_statement:
-  DO statement_body NEW_LINE WHILE conditional_expression_list terminator;
+  DO statement_body new_line WHILE conditional_expression_list terminator;
 
 type: INT_T
   | FLOAT_T

@@ -40,6 +40,18 @@ public class RUBYBaseListener implements RUBYListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterNewLine(RUBYParser.NewLineContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNewLine(RUBYParser.NewLineContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterFunction_body(RUBYParser.Function_bodyContext ctx) { }
 	/**
 	 * {@inheritDoc}

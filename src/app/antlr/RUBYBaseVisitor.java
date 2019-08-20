@@ -31,6 +31,13 @@ public class RUBYBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements R
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitNewLine(RUBYParser.NewLineContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitFunction_body(RUBYParser.Function_bodyContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}

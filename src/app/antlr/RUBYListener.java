@@ -28,6 +28,18 @@ public interface RUBYListener extends ParseTreeListener {
 	 */
 	void exitFunction_declaration(RUBYParser.Function_declarationContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code NewLine}
+	 * labeled alternative in {@link RUBYParser#new_line}.
+	 * @param ctx the parse tree
+	 */
+	void enterNewLine(RUBYParser.NewLineContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code NewLine}
+	 * labeled alternative in {@link RUBYParser#new_line}.
+	 * @param ctx the parse tree
+	 */
+	void exitNewLine(RUBYParser.NewLineContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link RUBYParser#function_body}.
 	 * @param ctx the parse tree
 	 */
