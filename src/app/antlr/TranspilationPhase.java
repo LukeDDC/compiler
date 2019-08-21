@@ -3,7 +3,6 @@ package app.antlr;
 import org.antlr.v4.runtime.tree.ParseTreeProperty;
 
 import app.Writers.JavaWriter;
-import app.scopes.GlobalScope;
 import app.scopes.Scope;
 
 /**
@@ -52,7 +51,8 @@ public class TranspilationPhase extends RUBYBaseListener {
     writer.exitProgram();
   }
 
-  @Override public void enterDeclaration_statement(RUBYParser.Declaration_statementContext ctx) {
+  @Override
+  public void enterDeclaration_statement(RUBYParser.Declaration_statementContext ctx) {
     writer.enterDeclaration_statement(ctx);
   }
 
