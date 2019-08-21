@@ -4,6 +4,7 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 
 import app.antlr.RUBYParser;
+import app.antlr.RUBYParser.Additional_expressionContext;
 import app.antlr.RUBYParser.Additional_parameterContext;
 import app.antlr.RUBYParser.AritmeticOperationContext;
 import app.antlr.RUBYParser.ConditionalContext;
@@ -13,6 +14,8 @@ import app.antlr.RUBYParser.Declaration_statementContext;
 import app.antlr.RUBYParser.Do_while_statementContext;
 import app.antlr.RUBYParser.Else_statementContext;
 import app.antlr.RUBYParser.EnclouseContext;
+import app.antlr.RUBYParser.Expression_listContext;
+import app.antlr.RUBYParser.FunctionCallContext;
 import app.antlr.RUBYParser.Main_declarationContext;
 import app.antlr.RUBYParser.ParameterContext;
 import app.antlr.RUBYParser.Return_statementContext;
@@ -197,5 +200,29 @@ public class JavaWriter {
 
   public void exitReturn_statement(Return_statementContext ctx) {
     printWriter.print(";");
+  public void enterFunctionCall(FunctionCallContext ctx) {
+    switch (ctx.ID().getText()) {
+    case "gets":
+      printWriter.print("System.in");
+      break;
+    case "puts":
+      printWriter.print("System.out.println");
+      break;
+    default:
+      printWriter.print(ctx.ID().getText());
+      break;
+    }
+  }
+
+  public void enterExpression_list(Expression_listContext ctx) {
+    printWriter.print("(");
+  }
+
+  public void exitExpression_list(Expression_listContext ctx) {
+    printWriter.print(")");
+  }
+
+  public void enterAdditional_expression(Additional_expressionContext ctx) {
+    printWriter.print(", ");
   }
 }

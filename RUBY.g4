@@ -17,12 +17,7 @@ new_line
   ;
 
 function_body
-  : (function_call | statement)+
-  |
-  ;
-
-function_call
-  : ID '(' expression_list? ')' terminator # FunctionCall
+  : (expression | statement)+
   ;
 
 parameters
@@ -44,8 +39,6 @@ statement
   | do_while_statement
   | assign_statement
   | for_statement
-  | puts_statement
-  | gets_statement
   | return_statement
   ;
 
@@ -61,13 +54,11 @@ declaration_statement
   ;
 
 assign_statement
-  : ID ASSIGN expression terminator #Assign;
+  : ID ASSIGN expression terminator #Assign
+  ;
 
 for_statement: FOR (expression | declaration_statement | assign_statement) SEMICOLON conditional_expression_list SEMICOLON assign_statement? new_line statement_body END terminator;
 
-puts_statement: PUTS LPAREN (ID | expression ) RPAREN terminator;
-
-gets_statement: GETS LPAREN RPAREN terminator;
 
 if_statement:
   IF conditional new_line* statement_body END new_line*
@@ -99,7 +90,8 @@ type: INT_T
   ;
 
 expression
-  : expression aritmetic_operator expression #AritmeticOperation
+  : ID '(' expression_list? ')' terminator # FunctionCall
+  | expression aritmetic_operator expression #AritmeticOperation
   | '(' expression ')'        #Enclouse
   | ID                        #Variable
   | INT                       #Int
@@ -116,7 +108,11 @@ aritmetic_operator
   ;
 
 expression_list
-  : expression (',' expression)*
+  : expression additional_expression*
+  ;
+
+additional_expression
+  : ',' expression
   ;
 
 conditional_expression_list:
