@@ -5,11 +5,11 @@ program
   ;
 
 function_declaration
-  : DEF ID parameters ':' type new_line function_body END new_line*
+  : DEF ID parameters ':' type new_line* function_body END new_line*
   ;
 
 main_declaration
-  : DEF 'main' ':' 'Void' new_line function_body END terminator
+  : DEF 'main' ':' 'Void' new_line* function_body END new_line*
   ;
 
 new_line
@@ -17,7 +17,7 @@ new_line
   ;
 
 function_body
-  : (expression | statement)+
+  : (statement | expression)+
   ;
 
 parameters
@@ -40,6 +40,7 @@ statement
   | assign_statement
   | for_statement
   | return_statement
+  | function_call terminator
   ;
 
 statement_body
@@ -89,9 +90,13 @@ type: INT_T
   | VOID_T
   ;
 
+function_call
+  : ID expression_list new_line* #FunctionCall
+  ;
+
 expression
-  : ID expression_list terminator # FunctionCall
-  | expression aritmetic_operator expression #AritmeticOperation
+  : expression aritmetic_operator expression #AritmeticOperation
+  | function_call             #Call
   | '(' expression ')'        #Enclouse
   | ID                        #Variable
   | INT                       #Int
@@ -99,6 +104,8 @@ expression
   | STRING                    #String
   | BOOL_T                    #Bool
   ;
+
+
 
 aritmetic_operator
   : '*' #Mult
@@ -143,7 +150,8 @@ terminator_token:
   | terminator_token NEW_LINE
   ;
 
-conditional_operator: EQUALS
+conditional_operator
+    : EQUALS
     | NOT_EQUALS
     | GREATER_THAN
     | LESSER_THAN

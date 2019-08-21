@@ -139,6 +139,20 @@ public interface RUBYVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitType(RUBYParser.TypeContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code FunctionCall}
+	 * labeled alternative in {@link RUBYParser#function_call}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFunctionCall(RUBYParser.FunctionCallContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Call}
+	 * labeled alternative in {@link RUBYParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCall(RUBYParser.CallContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code Float}
 	 * labeled alternative in {@link RUBYParser#expression}.
 	 * @param ctx the parse tree
@@ -166,13 +180,6 @@ public interface RUBYVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitBool(RUBYParser.BoolContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code FunctionCall}
-	 * labeled alternative in {@link RUBYParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFunctionCall(RUBYParser.FunctionCallContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code String}
 	 * labeled alternative in {@link RUBYParser#expression}.
