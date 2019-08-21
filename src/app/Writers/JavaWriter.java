@@ -41,7 +41,10 @@ public class JavaWriter {
   }
 
   public void enterProgram() {
+    printWriter.println("import java.util.Scanner;");
     printWriter.println("public class Program {");
+    printWriter.println("static Scanner in = new Scanner(System.in);");
+
   }
 
   public void exitProgram() {
@@ -67,7 +70,7 @@ public class JavaWriter {
   }
 
   private void enterMain() {
-    printWriter.println("\tpublic void main(String[] args) {");
+    printWriter.println("\tpublic static void main(String[] args)");
   }
 
   public void enterParameters() {
@@ -200,15 +203,18 @@ public class JavaWriter {
 
   public void exitReturn_statement(Return_statementContext ctx) {
     printWriter.print(";");
+  }
+
   public void enterFunctionCall(FunctionCallContext ctx) {
     switch (ctx.ID().getText()) {
     case "gets":
-      printWriter.print("System.in");
+      printWriter.print("in.nextLine");
       break;
     case "puts":
-      printWriter.print("System.out.println");
+      printWriter.print("System.out.print");
       break;
     default:
+      System.out.println("OIOIOI");
       printWriter.print(ctx.ID().getText());
       break;
     }
