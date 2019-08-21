@@ -215,7 +215,6 @@ public class JavaWriter {
       printWriter.print("System.out.print");
       break;
     default:
-      System.out.println("OIOIOI");
       printWriter.print(ctx.ID().getText());
       break;
     }
