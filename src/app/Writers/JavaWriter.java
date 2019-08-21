@@ -7,6 +7,7 @@ import app.antlr.RUBYParser;
 import app.antlr.RUBYParser.Additional_expressionContext;
 import app.antlr.RUBYParser.Additional_parameterContext;
 import app.antlr.RUBYParser.AritmeticOperationContext;
+import app.antlr.RUBYParser.AssignContext;
 import app.antlr.RUBYParser.ConditionalContext;
 import app.antlr.RUBYParser.Conditional_expression_listContext;
 import app.antlr.RUBYParser.Conditional_operatorContext;
@@ -230,5 +231,9 @@ public class JavaWriter {
 
   public void enterAdditional_expression(Additional_expressionContext ctx) {
     printWriter.print(", ");
+  }
+
+  public void enterAssign(AssignContext ctx) {
+    printWriter.print(ctx.ID().getText() + " = ");
   }
 }

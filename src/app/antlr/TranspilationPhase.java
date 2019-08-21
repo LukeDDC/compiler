@@ -229,4 +229,7 @@ public class TranspilationPhase extends RUBYBaseListener {
     writer.enterAdditional_expression(ctx);
   }
 
+  @Override public void enterAssign(RUBYParser.AssignContext ctx) {
+    writer.enterAssign(ctx);
+  }
 }
