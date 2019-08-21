@@ -46,11 +46,15 @@ statement
   | for_statement
   | puts_statement
   | gets_statement
+  | return_statement
   ;
 
 statement_body
   : statement*
   ;
+
+return_statement
+  : 'return' expression new_line*;
 
 declaration_statement
   : type ':' ID (ASSIGN expression)? terminator
@@ -66,8 +70,8 @@ puts_statement: PUTS LPAREN (ID | expression ) RPAREN terminator;
 gets_statement: GETS LPAREN RPAREN terminator;
 
 if_statement:
-  IF conditional new_line statement_body END new_line*
-	| IF conditional new_line statement_body else_statement statement_body END new_line*
+  IF conditional new_line* statement_body END new_line*
+	| IF conditional new_line* statement_body else_statement statement_body END new_line*
   ;
 
 else_statement
