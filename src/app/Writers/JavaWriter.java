@@ -15,6 +15,7 @@ import app.antlr.RUBYParser.Else_statementContext;
 import app.antlr.RUBYParser.EnclouseContext;
 import app.antlr.RUBYParser.Main_declarationContext;
 import app.antlr.RUBYParser.ParameterContext;
+import app.antlr.RUBYParser.Return_statementContext;
 import app.antlr.RUBYParser.Statement_bodyContext;
 import app.antlr.RUBYParser.TerminatorContext;
 import app.antlr.RUBYParser.While_blockContext;
@@ -188,5 +189,13 @@ public class JavaWriter {
 
   public void exitMain_declaration(Main_declarationContext ctx) {
     printWriter.print("\t}\n");
+  }
+
+  public void enterReturn_statement(Return_statementContext ctx) {
+    printWriter.print("return ");
+  }
+
+  public void exitReturn_statement(Return_statementContext ctx) {
+    printWriter.print(";");
   }
 }
