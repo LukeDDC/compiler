@@ -42,13 +42,6 @@ public interface RUBYVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFunction_body(RUBYParser.Function_bodyContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code FunctionCall}
-	 * labeled alternative in {@link RUBYParser#function_call}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFunctionCall(RUBYParser.FunctionCallContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link RUBYParser#parameters}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -103,18 +96,6 @@ public interface RUBYVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitFor_statement(RUBYParser.For_statementContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link RUBYParser#puts_statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitPuts_statement(RUBYParser.Puts_statementContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link RUBYParser#gets_statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitGets_statement(RUBYParser.Gets_statementContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link RUBYParser#if_statement}.
 	 * @param ctx the parse tree
@@ -186,6 +167,13 @@ public interface RUBYVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitBool(RUBYParser.BoolContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code FunctionCall}
+	 * labeled alternative in {@link RUBYParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFunctionCall(RUBYParser.FunctionCallContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code String}
 	 * labeled alternative in {@link RUBYParser#expression}.
 	 * @param ctx the parse tree
@@ -240,6 +228,12 @@ public interface RUBYVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitExpression_list(RUBYParser.Expression_listContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link RUBYParser#additional_expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAdditional_expression(RUBYParser.Additional_expressionContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link RUBYParser#conditional_expression_list}.
 	 * @param ctx the parse tree

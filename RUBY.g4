@@ -90,7 +90,7 @@ type: INT_T
   ;
 
 expression
-  : ID '(' expression_list? ')' terminator # FunctionCall
+  : ID expression_list terminator # FunctionCall
   | expression aritmetic_operator expression #AritmeticOperation
   | '(' expression ')'        #Enclouse
   | ID                        #Variable
@@ -108,7 +108,7 @@ aritmetic_operator
   ;
 
 expression_list
-  : expression additional_expression*
+  : '(' expression* additional_expression* ')'
   ;
 
 additional_expression
@@ -186,8 +186,6 @@ DO: 'do';
 END: 'end';
 FOR: 'for';
 DEF: 'def';
-GETS: 'gets';
-PUTS: 'puts';
 
 // KEYWORDS TYPES
 INT_T:    'Integer';

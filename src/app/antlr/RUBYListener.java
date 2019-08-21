@@ -60,18 +60,6 @@ public interface RUBYListener extends ParseTreeListener {
 	 */
 	void exitFunction_body(RUBYParser.Function_bodyContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code FunctionCall}
-	 * labeled alternative in {@link RUBYParser#function_call}.
-	 * @param ctx the parse tree
-	 */
-	void enterFunctionCall(RUBYParser.FunctionCallContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code FunctionCall}
-	 * labeled alternative in {@link RUBYParser#function_call}.
-	 * @param ctx the parse tree
-	 */
-	void exitFunctionCall(RUBYParser.FunctionCallContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link RUBYParser#parameters}.
 	 * @param ctx the parse tree
 	 */
@@ -163,26 +151,6 @@ public interface RUBYListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitFor_statement(RUBYParser.For_statementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RUBYParser#puts_statement}.
-	 * @param ctx the parse tree
-	 */
-	void enterPuts_statement(RUBYParser.Puts_statementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RUBYParser#puts_statement}.
-	 * @param ctx the parse tree
-	 */
-	void exitPuts_statement(RUBYParser.Puts_statementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link RUBYParser#gets_statement}.
-	 * @param ctx the parse tree
-	 */
-	void enterGets_statement(RUBYParser.Gets_statementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link RUBYParser#gets_statement}.
-	 * @param ctx the parse tree
-	 */
-	void exitGets_statement(RUBYParser.Gets_statementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link RUBYParser#if_statement}.
 	 * @param ctx the parse tree
@@ -302,6 +270,18 @@ public interface RUBYListener extends ParseTreeListener {
 	 */
 	void exitBool(RUBYParser.BoolContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code FunctionCall}
+	 * labeled alternative in {@link RUBYParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunctionCall(RUBYParser.FunctionCallContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code FunctionCall}
+	 * labeled alternative in {@link RUBYParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunctionCall(RUBYParser.FunctionCallContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code String}
 	 * labeled alternative in {@link RUBYParser#expression}.
 	 * @param ctx the parse tree
@@ -395,6 +375,16 @@ public interface RUBYListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitExpression_list(RUBYParser.Expression_listContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link RUBYParser#additional_expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterAdditional_expression(RUBYParser.Additional_expressionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RUBYParser#additional_expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitAdditional_expression(RUBYParser.Additional_expressionContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link RUBYParser#conditional_expression_list}.
 	 * @param ctx the parse tree
