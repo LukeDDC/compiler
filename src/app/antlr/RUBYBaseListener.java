@@ -148,6 +148,18 @@ public class RUBYBaseListener implements RUBYListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterReturn_statement(RUBYParser.Return_statementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitReturn_statement(RUBYParser.Return_statementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterDeclaration_statement(RUBYParser.Declaration_statementContext ctx) { }
 	/**
 	 * {@inheritDoc}

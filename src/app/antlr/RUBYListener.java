@@ -122,6 +122,16 @@ public interface RUBYListener extends ParseTreeListener {
 	 */
 	void exitStatement_body(RUBYParser.Statement_bodyContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link RUBYParser#return_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterReturn_statement(RUBYParser.Return_statementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RUBYParser#return_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitReturn_statement(RUBYParser.Return_statementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link RUBYParser#declaration_statement}.
 	 * @param ctx the parse tree
 	 */
