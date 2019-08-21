@@ -18,36 +18,44 @@ public class TranspilationPhase extends RUBYBaseListener {
     this.scopes = scopes;
   }
 
-  @Override public void enterProgram(RUBYParser.ProgramContext ctx) {
+  @Override
+  public void enterProgram(RUBYParser.ProgramContext ctx) {
     writer = new JavaWriter("Program.java");
     writer.enterProgram();
   }
 
-  @Override public void enterFunction_declaration(RUBYParser.Function_declarationContext ctx) {
+  @Override
+  public void enterFunction_declaration(RUBYParser.Function_declarationContext ctx) {
     writer.enterFunction_declaration(ctx);
   }
 
-  @Override public void exitFunction_declaration(RUBYParser.Function_declarationContext ctx) {
+  @Override
+  public void exitFunction_declaration(RUBYParser.Function_declarationContext ctx) {
     writer.exitFunction_declaration();
   }
 
-  @Override public void enterParameters(RUBYParser.ParametersContext ctx) {
+  @Override
+  public void enterParameters(RUBYParser.ParametersContext ctx) {
     writer.enterParameters();
   }
 
-  @Override public void enterParameter(RUBYParser.ParameterContext ctx) {
+  @Override
+  public void enterParameter(RUBYParser.ParameterContext ctx) {
     writer.enterParameter(ctx);
   }
 
-  @Override public void exitParameters(RUBYParser.ParametersContext ctx) {
+  @Override
+  public void exitParameters(RUBYParser.ParametersContext ctx) {
     writer.exitParameters();
   }
 
-	@Override public void enterFunction_body(RUBYParser.Function_bodyContext ctx) {
+  @Override
+  public void enterFunction_body(RUBYParser.Function_bodyContext ctx) {
     writer.enterFunction_body();
   }
 
-  @Override public void exitProgram(RUBYParser.ProgramContext ctx) {
+  @Override
+  public void exitProgram(RUBYParser.ProgramContext ctx) {
     writer.exitProgram();
   }
 
@@ -56,47 +64,58 @@ public class TranspilationPhase extends RUBYBaseListener {
     writer.enterDeclaration_statement(ctx);
   }
 
-  @Override public void enterVariable(RUBYParser.VariableContext ctx) {
+  @Override
+  public void enterVariable(RUBYParser.VariableContext ctx) {
     writer.enterPrimitiveType(ctx);
   }
 
-  @Override public void enterInt(RUBYParser.IntContext ctx) {
+  @Override
+  public void enterInt(RUBYParser.IntContext ctx) {
     writer.enterPrimitiveType(ctx);
   }
 
-  @Override public void enterFloat(RUBYParser.FloatContext ctx) {
+  @Override
+  public void enterFloat(RUBYParser.FloatContext ctx) {
     writer.enterPrimitiveType(ctx);
   }
 
-  @Override public void enterBool(RUBYParser.BoolContext ctx) {
+  @Override
+  public void enterBool(RUBYParser.BoolContext ctx) {
     writer.enterPrimitiveType(ctx);
   }
 
-  @Override public void enterString(RUBYParser.StringContext ctx) {
+  @Override
+  public void enterString(RUBYParser.StringContext ctx) {
     writer.enterPrimitiveType(ctx);
   }
 
-  @Override public void enterMult(RUBYParser.MultContext ctx) {
+  @Override
+  public void enterMult(RUBYParser.MultContext ctx) {
     writer.enterAritmeticOperator(ctx);
   }
 
-  @Override public void enterDiv(RUBYParser.DivContext ctx) {
+  @Override
+  public void enterDiv(RUBYParser.DivContext ctx) {
     writer.enterAritmeticOperator(ctx);
   }
 
-  @Override public void enterSub(RUBYParser.SubContext ctx) {
+  @Override
+  public void enterSub(RUBYParser.SubContext ctx) {
     writer.enterAritmeticOperator(ctx);
   }
 
-  @Override public void enterAdd(RUBYParser.AddContext ctx) {
+  @Override
+  public void enterAdd(RUBYParser.AddContext ctx) {
     writer.enterAritmeticOperator(ctx);
   }
 
-  @Override public void enterEnclouse(RUBYParser.EnclouseContext ctx) {
+  @Override
+  public void enterEnclouse(RUBYParser.EnclouseContext ctx) {
     writer.enterEnclouse(ctx);
-   }
+  }
 
-  @Override public void exitEnclouse(RUBYParser.EnclouseContext ctx) {
+  @Override
+  public void exitEnclouse(RUBYParser.EnclouseContext ctx) {
     writer.exitEnclouse(ctx);
   }
 
@@ -125,12 +144,12 @@ public class TranspilationPhase extends RUBYBaseListener {
     writer.exitConditional_expression_list(ctx);
   }
 
-	@Override
+  @Override
   public void enterConditional(RUBYParser.ConditionalContext ctx) {
     writer.enterConditional(ctx);
   }
 
-	@Override
+  @Override
   public void exitConditional(RUBYParser.ConditionalContext ctx) {
     writer.exitConditional(ctx);
   }
@@ -150,7 +169,7 @@ public class TranspilationPhase extends RUBYBaseListener {
     writer.enterElse_statement(ctx);
   }
 
-	@Override
+  @Override
   public void enterDo_while_statement(RUBYParser.Do_while_statementContext ctx) {
     writer.enterDo_while_statement(ctx);
   }
@@ -160,28 +179,54 @@ public class TranspilationPhase extends RUBYBaseListener {
     writer.enterWhile_block(ctx);
   }
 
-	@Override
+  @Override
   public void enterAdditional_parameter(RUBYParser.Additional_parameterContext ctx) {
     writer.enterAdditional_parameter(ctx);
   }
 
-  @Override public void exitTerminator(RUBYParser.TerminatorContext ctx) {
+  @Override
+  public void exitTerminator(RUBYParser.TerminatorContext ctx) {
     writer.exitTerminator(ctx);
   }
 
-  @Override public void enterMain_declaration(RUBYParser.Main_declarationContext ctx) {
+  @Override
+  public void enterMain_declaration(RUBYParser.Main_declarationContext ctx) {
     writer.enterMain_declaration(ctx);
   }
 
-  @Override public void exitMain_declaration(RUBYParser.Main_declarationContext ctx) {
+  @Override
+  public void exitMain_declaration(RUBYParser.Main_declarationContext ctx) {
     writer.exitMain_declaration(ctx);
   }
 
-  @Override public void enterReturn_statement(RUBYParser.Return_statementContext ctx) {
+  @Override
+  public void enterReturn_statement(RUBYParser.Return_statementContext ctx) {
     writer.enterReturn_statement(ctx);
   }
 
-  @Override public void exitReturn_statement(RUBYParser.Return_statementContext ctx) {
+  @Override
+  public void exitReturn_statement(RUBYParser.Return_statementContext ctx) {
     writer.exitReturn_statement(ctx);
   }
+
+  @Override
+  public void enterFunctionCall(RUBYParser.FunctionCallContext ctx) {
+    writer.enterFunctionCall(ctx);
+  }
+
+  @Override
+  public void enterExpression_list(RUBYParser.Expression_listContext ctx) {
+    writer.enterExpression_list(ctx);
+  }
+
+  @Override
+  public void exitExpression_list(RUBYParser.Expression_listContext ctx) {
+    writer.exitExpression_list(ctx);
+  }
+
+  @Override
+  public void enterAdditional_expression(RUBYParser.Additional_expressionContext ctx) {
+    writer.enterAdditional_expression(ctx);
+  }
+
 }
