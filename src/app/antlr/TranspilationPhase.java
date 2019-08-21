@@ -1,6 +1,9 @@
 package app.antlr;
 
+import org.antlr.v4.runtime.tree.ParseTreeProperty;
+
 import app.Writers.JavaWriter;
+import app.scopes.Scope;
 
 /**
  * TranspilationPhase
@@ -9,6 +12,11 @@ import app.Writers.JavaWriter;
  */
 public class TranspilationPhase extends RUBYBaseListener {
   public JavaWriter writer;
+  ParseTreeProperty<Scope> scopes = new ParseTreeProperty<Scope>();
+
+  public TranspilationPhase(ParseTreeProperty<Scope> scopes) {
+    this.scopes = scopes;
+  }
 
   @Override public void enterProgram(RUBYParser.ProgramContext ctx) {
     writer = new JavaWriter("Program.java");
