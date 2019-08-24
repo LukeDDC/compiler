@@ -63,7 +63,7 @@ for_statement: FOR (expression | declaration_statement | assign_statement) SEMIC
 
 if_statement:
   IF conditional new_line* statement_body END new_line*
-	| IF conditional new_line* statement_body else_statement statement_body END new_line*
+	| IF conditional new_line* statement_body else_statement new_line* statement_body END new_line*
   ;
 
 else_statement

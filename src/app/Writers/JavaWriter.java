@@ -91,7 +91,7 @@ public class JavaWriter {
     case "Integer":
       return "int";
     case "Float":
-      return "float";
+      return "double";
     default:
       return "";
     }
